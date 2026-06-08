@@ -1,0 +1,120 @@
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.profile-card {
+  padding: 30px;
+
+  text-align: center;
+
+  border-radius: 30px;
+
+  background: rgba(255, 255, 255, 0.04);
+
+  backdrop-filter: blur(15px);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  transition: 0.4s;
+}
+
+.profile-card:hover {
+  transform: translateY(-5px);
+}
+
+.profile-card img {
+  width: 120px;
+  height: 120px;
+
+  border-radius: 50%;
+
+  object-fit: cover;
+
+  border: 3px solid #00ffff;
+}
+
+.profile-card h3 {
+  margin-top: 15px;
+
+  color: white;
+}
+
+.profile-card p {
+  color: #bcbcbc;
+}
+
+.dashboard-grid {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 20px;
+}
+
+.metric-card {
+  padding: 25px;
+
+  border-radius: 24px;
+
+  background: rgba(255, 255, 255, 0.04);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  text-align: center;
+
+  transition: 0.4s;
+}
+
+.metric-card:hover {
+  transform: translateY(-5px);
+
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+}
+
+.metric-card svg {
+  font-size: 1.8rem;
+
+  color: #00ffff;
+
+  margin-bottom: 10px;
+}
+
+.metric-card h4 {
+  color: #cfcfcf;
+
+  margin-bottom: 8px;
+}
+
+.metric-card span {
+  color: white;
+
+  font-size: 1.6rem;
+
+  font-weight: 700;
+}
+
+.radar-card {
+  padding: 25px;
+
+  border-radius: 30px;
+
+  background: rgba(255, 255, 255, 0.04);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  text-align: center;
+}
+
+.radar-card h3 {
+  color: white;
+
+  margin-bottom: 20px;
+}
+
+.radar-card img {
+  width: 100%;
+
+  max-width: 320px;
+}
