@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* small base tweaks */
+html,
+body {
+  height: 100%;
+}
+#root {
+  min-height: 100%;
+}
+body {
+  background: #050816;
+  color: #cbd5e1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* preserve some hero / navbar styles if needed */

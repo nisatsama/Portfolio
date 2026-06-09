@@ -1,0 +1,136 @@
+.experience-section {
+  min-height: 100vh;
+  padding: 100px 10%;
+  background: #050816;
+  color: white;
+}
+
+.experience-container {
+  max-width: 1100px;
+  margin: auto;
+}
+
+.section-tag {
+  color: #00e5ff;
+  letter-spacing: 3px;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.section-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 70px;
+}
+
+.section-title span {
+  background: linear-gradient(to right, #4f46e5, #00e5ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.timeline {
+  position: relative;
+  margin-left: 20px;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 15px;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background: rgba(0, 229, 255, 0.3);
+}
+
+.timeline-item {
+  position: relative;
+  padding-left: 60px;
+  margin-bottom: 50px;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: 7px;
+  top: 20px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #00e5ff;
+  box-shadow: 0 0 15px #00e5ff;
+}
+
+.timeline-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 229, 255, 0.15);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 25px;
+  transition: 0.3s ease;
+}
+
+.timeline-card:hover {
+  transform: translateY(-8px);
+  border-color: #00e5ff;
+  box-shadow: 0 0 30px rgba(0, 229, 255, 0.2);
+}
+
+.timeline-header {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.timeline-header h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.timeline-header span {
+  color: #00e5ff;
+  font-size: 0.95rem;
+}
+
+.timeline-card h4 {
+  margin-top: 10px;
+  color: #b0b7c3;
+}
+
+.timeline-card p {
+  margin-top: 15px;
+  color: #d1d5db;
+  line-height: 1.8;
+}
+
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.tech-stack span {
+  padding: 8px 14px;
+  border-radius: 30px;
+  background: rgba(0, 229, 255, 0.1);
+  border: 1px solid rgba(0, 229, 255, 0.2);
+  color: #00e5ff;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2.2rem;
+  }
+
+  .timeline-item {
+    padding-left: 45px;
+  }
+
+  .timeline-header {
+    flex-direction: column;
+  }
+}
