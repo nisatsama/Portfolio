@@ -3,6 +3,22 @@ import "./Projects.css";
 
 const projects = [
   {
+    title: "CodeCollab",
+    description:
+      "A real-time collaborative coding platform where multiple users can join coding rooms, write code together, communicate instantly, and execute code in a shared environment. Features live synchronization using WebSockets, Monaco Editor integration, room-based collaboration, and secure backend services.",
+    tech: [
+      "React",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "Socket.IO",
+      "Monaco Editor",
+      "Docker",
+    ],
+    github: "#",
+    live: "#",
+  },
+  {
     title: "Travelogia",
     description:
       "A full-stack travel booking platform with authentication, wishlist, cost estimation, destination management and admin dashboard.",

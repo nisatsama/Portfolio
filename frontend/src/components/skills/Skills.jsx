@@ -1,15 +1,81 @@
 import React from "react";
+import {
+  FaLaptopCode,
+  FaServer,
+  FaDatabase,
+  FaJava,
+  FaGithub,
+  FaNetworkWired,
+} from "react-icons/fa";
 import "./Skills.css";
 
 const skills = [
-  { name: "HTML", level: 95 },
-  { name: "CSS", level: 90 },
-  { name: "JavaScript", level: 88 },
-  { name: "React", level: 85 },
-  { name: "Node.js", level: 82 },
-  { name: "Express.js", level: 82 },
-  { name: "MongoDB", level: 80 },
-  { name: "Java", level: 90 },
+  {
+    title: "Frontend Development",
+    icon: <FaLaptopCode />,
+    description:
+      "Building responsive, interactive and visually appealing user interfaces for modern web applications.",
+    tech: ["HTML5", "CSS3", "JavaScript", "React.js", "Responsive Design"],
+  },
+
+  {
+    title: "Backend Development",
+    icon: <FaServer />,
+    description:
+      "Developing server-side applications, APIs and authentication systems that power web platforms.",
+    tech: [
+      "Node.js",
+      "Express.js",
+      "REST APIs",
+      "Authentication",
+      "Middleware",
+    ],
+  },
+
+  {
+    title: "Database Management",
+    icon: <FaDatabase />,
+    description:
+      "Designing and managing databases for efficient storage, retrieval and scalability of application data.",
+    tech: ["MongoDB", "Mongoose", "CRUD Operations", "Schema Design"],
+  },
+
+  {
+    title: "Java & DSA",
+    icon: <FaJava />,
+    description:
+      "Applying object-oriented programming principles and data structures to solve coding and software engineering problems.",
+    tech: [
+      "Java",
+      "OOP",
+      "Data Structures",
+      "Algorithms",
+      "Collections",
+      "Problem Solving",
+    ],
+  },
+
+  {
+    title: "Developer Tools",
+    icon: <FaGithub />,
+    description:
+      "Using modern development, deployment and version control tools to build, test and manage applications efficiently.",
+    tech: ["Git", "GitHub", "VS Code", "Vercel", "Render", "npm"],
+  },
+
+  {
+    title: "CS Fundamentals",
+    icon: <FaNetworkWired />,
+    description:
+      "Strong foundation in core computer science concepts that support scalable and reliable software development.",
+    tech: [
+      "DBMS",
+      "Operating Systems",
+      "Computer Networks",
+      "Software Engineering",
+      "OOP Concepts",
+    ],
+  },
 ];
 
 const Skills = () => {
@@ -19,22 +85,22 @@ const Skills = () => {
         <p className="skills-tag">TECH STACK</p>
 
         <h2 className="skills-title">
-          My <span>Skills</span>
+          What I <span>Build</span>
         </h2>
 
         <div className="skills-grid">
           {skills.map((skill, index) => (
             <div className="skill-card" key={index}>
-              <div className="skill-header">
-                <h3>{skill.name}</h3>
-                <span>{skill.level}%</span>
-              </div>
+              <div className="skill-icon">{skill.icon}</div>
 
-              <div className="progress-bar">
-                <div
-                  className="progress-fill"
-                  style={{ width: `${skill.level}%` }}
-                ></div>
+              <h3>{skill.title}</h3>
+
+              <p>{skill.description}</p>
+
+              <div className="tech-tags">
+                {skill.tech.map((item, i) => (
+                  <span key={i}>{item}</span>
+                ))}
               </div>
             </div>
           ))}

@@ -1,30 +1,44 @@
 import React from "react";
+import { motion } from "framer-motion";
+import {
+  FaBriefcase,
+  FaGithub,
+  FaTrophy,
+  FaLaptopCode,
+  FaCode,
+} from "react-icons/fa";
+
 import "./Experience.css";
 
 const experiences = [
   {
-    title: "Full Stack Developer",
-    company: "Personal Projects",
-    period: "2025 - Present",
-    description:
-      "Built and deployed full-stack web applications using MERN Stack. Developed authentication systems, REST APIs, responsive UI, and database integrations.",
-    tech: ["React", "Node.js", "Express", "MongoDB"],
-  },
-  {
-    title: "DSA & Problem Solving",
-    company: "LeetCode",
-    period: "2024 - Present",
-    description:
-      "Solved 327+ coding problems covering Arrays, Strings, Linked Lists, Trees, Graphs, Dynamic Programming, and Backtracking.",
-    tech: ["Java", "DSA", "Algorithms"],
-  },
-  {
-    title: "AI Resume Analyzer",
-    company: "AI Project",
+    icon: <FaBriefcase />,
+    title: "Software Development Intern",
+    company: "Prodigy InfoTech",
     period: "2026",
     description:
-      "Developed an AI-powered resume analyzer providing ATS score evaluation, skill extraction, and resume feedback using modern AI APIs.",
-    tech: ["React", "Node.js", "AI", "MongoDB"],
+      "Selected as a Software Development Intern. Worked on industry-level web development projects, strengthened software engineering fundamentals, and gained practical development experience.",
+    tech: ["JavaScript", "React", "Web Development"],
+  },
+
+  {
+    icon: <FaTrophy />,
+    title: "Hackathon Participant",
+    company: "National & University Hackathons",
+    period: "2025 - Present",
+    description:
+      "Participated in multiple hackathons, building innovative solutions under time constraints while collaborating with teams on full-stack applications and problem-solving challenges.",
+    tech: ["MERN Stack", "Teamwork", "Problem Solving"],
+  },
+
+  {
+    icon: <FaGithub />,
+    title: "Open Source Contributor",
+    company: "GitHub",
+    period: "2025 - Present",
+    description:
+      "Contributed to open-source repositories by fixing bugs, improving documentation, submitting pull requests, and collaborating with developers worldwide.",
+    tech: ["Git", "GitHub", "Open Source"],
   },
 ];
 
@@ -35,15 +49,46 @@ const Experience = () => {
         <p className="section-tag">MY JOURNEY</p>
 
         <h2 className="section-title">
-          Experience &<span> Growth</span>
+          Experience & <span>Growth</span>
         </h2>
+
+        <div className="experience-stats">
+          <div className="stat-card">
+            <h3>327+</h3>
+            <p>Problems Solved</p>
+          </div>
+
+          <div className="stat-card">
+            <h3>10+</h3>
+            <p>Projects Built</p>
+          </div>
+
+          <div className="stat-card">
+            <h3>3+</h3>
+            <p>Hackathons</p>
+          </div>
+
+          <div className="stat-card">
+            <h3>OSS</h3>
+            <p>Contributor</p>
+          </div>
+        </div>
 
         <div className="timeline">
           {experiences.map((exp, index) => (
-            <div className="timeline-item" key={index}>
+            <motion.div
+              key={index}
+              className="timeline-item"
+              initial={{ opacity: 0, y: 70 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+            >
               <div className="timeline-dot"></div>
 
               <div className="timeline-card">
+                <div className="experience-icon">{exp.icon}</div>
+
                 <div className="timeline-header">
                   <h3>{exp.title}</h3>
                   <span>{exp.period}</span>
@@ -59,7 +104,7 @@ const Experience = () => {
                   ))}
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
