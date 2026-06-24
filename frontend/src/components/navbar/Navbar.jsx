@@ -29,8 +29,6 @@ const Navbar = () => {
           <a href="#contact">Contact</a>
         </li>
       </ul>
-
-      <button className="resume-btn">Resume</button>
     </nav>
   );
 };

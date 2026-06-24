@@ -43,13 +43,6 @@ const About = () => {
           </span>
         </h2>
 
-        <p className="text-gray-300 text-lg leading-relaxed max-w-3xl">
-          I'm <span className="text-white font-semibold">Nisat Sama</span>, a
-          Computer Science student and aspiring Software Engineer passionate
-          about Full Stack Development, Data Structures & Algorithms, and
-          creating impactful digital experiences.
-        </p>
-
         <p className="text-gray-400 text-lg leading-relaxed mt-6 max-w-3xl">
           From building MERN stack applications to solving hundreds of coding
           challenges, I enjoy transforming ideas into scalable products while

@@ -13,18 +13,18 @@ import "./Experience.css";
 const experiences = [
   {
     icon: <FaBriefcase />,
-    title: "Software Development Intern",
-    company: "Prodigy InfoTech",
+    title: "AI Web Development Intern",
+    company: "ImAmigos Foundations",
     period: "2026",
     description:
-      "Selected as a Software Development Intern. Worked on industry-level web development projects, strengthened software engineering fundamentals, and gained practical development experience.",
+      "Selected as an AI Web Development Intern. Worked on industry-level web development projects, strengthened software engineering fundamentals, and gained practical development experience.",
     tech: ["JavaScript", "React", "Web Development"],
   },
 
   {
     icon: <FaTrophy />,
     title: "Hackathon Participant",
-    company: "National & University Hackathons",
+    company: "India AI Impact Buildathon 2026",
     period: "2025 - Present",
     description:
       "Participated in multiple hackathons, building innovative solutions under time constraints while collaborating with teams on full-stack applications and problem-solving challenges.",
@@ -54,8 +54,9 @@ const Experience = () => {
 
         <div className="experience-stats">
           <div className="stat-card">
-            <h3>327+</h3>
-            <p>Problems Solved</p>
+            <h3>400+</h3>
+            <p>Leetcode Problems Solved</p>
+            <p>Leetcode ranking 1561</p>
           </div>
 
           <div className="stat-card">

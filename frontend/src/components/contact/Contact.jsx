@@ -67,6 +67,13 @@ function Contact() {
             LinkedIn
           </a>
 
+          <a
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=nisatsama7547@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            📧 Email
+          </a>
           {/* <a
             href="https://twitter.com/yourusername"
             target="_blank"

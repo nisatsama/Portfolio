@@ -28,7 +28,7 @@ export default function Hero() {
             View Projects
           </a>
 
-          <a href="/resume.pdf" className="secondary-btn">
+          <a href="/NisatSama.pdf" className="secondary-btn">
             Resume
           </a>
         </div>

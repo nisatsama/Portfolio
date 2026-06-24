@@ -15,31 +15,33 @@ const projects = [
       "Monaco Editor",
       "Docker",
     ],
-    github: "#",
-    live: "#",
+    github: "https://github.com/nisatsama/CodeCollab",
+    live: "https://code-collab-phi-one.vercel.app/",
   },
   {
     title: "Travelogia",
     description:
       "A full-stack travel booking platform with authentication, wishlist, cost estimation, destination management and admin dashboard.",
     tech: ["React", "Node.js", "MongoDB", "Express"],
-    github: "#",
-    live: "#",
+    github: "https://github.com/nisatsama/Travelogia",
+    live: "https://travelogia-8m7e.vercel.app/",
+    api: "https://travelogia-nfpk.onrender.com/",
   },
   {
     title: "AI Resume Analyzer",
     description:
       "AI-powered resume analysis platform that evaluates resumes, provides ATS scoring, extracts skills and generates improvement suggestions.",
     tech: ["React", "Node.js", "AI", "MongoDB"],
-    github: "#",
-    live: "#",
+    github: "https://github.com/nisatsama/AIResumeAnalyser",
+    live: "https://ai-resume-analyser-brown.vercel.app/",
+    api: "https://airesumeanalyser-gu5k.onrender.com/",
   },
   {
-    title: "Portfolio Website",
+    title: "ZeroLine",
     description:
-      "Personal portfolio showcasing projects, skills, achievements and development journey with modern UI design.",
-    tech: ["React", "CSS"],
-    github: "#",
+      "Your personalized AI productivity app, that allows you not to miss a single dealine.",
+    tech: ["React", "Node.js", "MongoDB", "Express", "Google AI Studio"],
+    github: "https://github.com/nisatsama/ZeroLine",
     live: "#",
   },
 ];
@@ -71,6 +73,7 @@ const Projects = () => {
                 <a href={project.github}>GitHub</a>
 
                 <a href={project.live}>Live Demo</a>
+                <a href={project.api}>API</a>
               </div>
             </div>
           ))}
