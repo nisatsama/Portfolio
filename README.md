@@ -10,7 +10,7 @@ I'm **Nisat Sama**, a B.Tech Computer Science Engineering student passionate abo
 
 * 💻 Aspiring Software Development Engineer (SDE)
 * 📚 Strong interest in Data Structures & Algorithms
-* 🌱 Currently exploring Full Stack Development
+* 🌱 Currently exploring Spring Boot and System Design for building scalable web applications
 * 🎯 Seeking internship and software engineering opportunities
 * ⚡ Love building projects that solve real-world problems
 
@@ -20,11 +20,12 @@ I'm **Nisat Sama**, a B.Tech Computer Science Engineering student passionate abo
 
 * Java
 * JavaScript
-* HTML5
-* CSS3
+  
 
 ### Frontend
 
+* HTML5
+* CSS3
 * React.js
 * Tailwind CSS
 * Bootstrap
@@ -33,19 +34,16 @@ I'm **Nisat Sama**, a B.Tech Computer Science Engineering student passionate abo
 
 * Node.js
 * Express.js
+  
 
-### Database
 
-* MySQL
-* MongoDB
 
 ### Tools & Platforms
 
 * Git
 * GitHub
 * VS Code
-* Postman
-* Linux
+* Vercel
 
 ## ✨ Features
 
@@ -91,6 +89,7 @@ Ways to connect and collaborate.
 * Contribute to Open Source
 * Secure a Software Development Internship
 * Prepare for Product-Based Company Interviews
+* Currently learning Spring Boot and System Design
 
 ## 📸 Portfolio Preview
 
