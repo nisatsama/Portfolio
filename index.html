@@ -1,0 +1,1495 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Nisat Sama | SDE</title>
+    <meta
+      name="description"
+      content="Nisat Sama's road-style portfolio featuring skills, education, experience, projects, achievements, and contact links."
+    />
+    <style>
+      :root {
+        --paper: #f7f6f2;
+        --paper-soft: #fbfaf7;
+        --ink: #22232a;
+        --ink-soft: #55565f;
+        --muted: #a4a4a7;
+        --line: #deddd8;
+        --purple: #9274ff;
+        --coral: #ff775f;
+        --amber: #ffc845;
+        --mint: #67d6b1;
+        --blue: #63a8e8;
+        --green: #477c53;
+        --road-dark: #1d2029;
+        --road-shadow: #777a7a;
+        --road: #9a9c9a;
+        --road-light: #b7b8b4;
+        --card: rgba(255, 255, 255, 0.72);
+        --shadow: 0 26px 70px rgba(34, 35, 42, 0.12);
+        --sans: "Segoe UI", Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+        --serif: Georgia, "Times New Roman", serif;
+        --mono: "Cascadia Mono", "Fira Code", "SFMono-Regular", Consolas, monospace;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        min-width: 320px;
+        color: var(--ink);
+        font-family: var(--sans);
+        background:
+          radial-gradient(circle at 78% 12%, rgba(146, 116, 255, 0.1), transparent 24rem),
+          linear-gradient(180deg, #fbfaf7 0%, #f6f5f1 56%, #f8f8f5 100%);
+        overflow-x: hidden;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      .skip-link {
+        position: fixed;
+        left: 1rem;
+        top: -5rem;
+        z-index: 50;
+        border-radius: 999px;
+        background: var(--ink);
+        color: white;
+        padding: 0.75rem 1rem;
+        transition: top 160ms ease;
+      }
+
+      .skip-link:focus {
+        top: 1rem;
+      }
+
+      .action-bar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 30;
+        border-bottom: 1px solid rgba(34, 35, 42, 0.08);
+        background: rgba(247, 246, 242, 0.7);
+        backdrop-filter: blur(18px);
+      }
+
+      .nav {
+        min-height: 68px;
+        padding: 0 5.8vw;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.72rem;
+        color: var(--ink);
+        font-family: var(--mono);
+        font-size: 0.84rem;
+        font-weight: 800;
+        letter-spacing: 0.18em;
+        text-decoration: none;
+        text-transform: uppercase;
+      }
+
+      .brand-mark {
+        width: 34px;
+        height: 34px;
+        display: grid;
+        place-items: center;
+        border: 2px solid var(--ink);
+        border-radius: 50%;
+        font-family: var(--serif);
+        letter-spacing: -0.08em;
+      }
+
+      .nav-actions,
+      .button-row {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 0.68rem;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.48rem;
+        min-height: 42px;
+        border: 1px solid var(--ink);
+        border-radius: 5px;
+        padding: 0.68rem 1.05rem;
+        background: rgba(255, 255, 255, 0.68);
+        color: var(--ink);
+        font-family: var(--mono);
+        font-size: 0.8rem;
+        font-weight: 800;
+        letter-spacing: 0.14em;
+        text-decoration: none;
+        text-transform: uppercase;
+        transition:
+          transform 180ms ease,
+          box-shadow 180ms ease,
+          background 180ms ease,
+          color 180ms ease;
+      }
+
+      .button:hover,
+      .button:focus-visible {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 24px rgba(34, 35, 42, 0.12);
+      }
+
+      .button.primary {
+        border-color: var(--purple);
+        background: var(--purple);
+        color: white;
+        box-shadow: 0 14px 28px rgba(146, 116, 255, 0.25);
+      }
+
+      .button.ghost {
+        border-color: rgba(34, 35, 42, 0.16);
+      }
+
+      .portfolio {
+        display: grid;
+        grid-template-columns: 64px minmax(320px, 39vw) minmax(460px, 1fr);
+        gap: clamp(1.2rem, 3vw, 3.5rem);
+        min-height: 100vh;
+        padding: 68px 0 0;
+      }
+
+      .story-rail {
+        position: sticky;
+        top: 68px;
+        z-index: 4;
+        height: calc(100vh - 68px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: rgba(164, 164, 167, 0.36);
+        font-family: var(--mono);
+        font-size: 0.74rem;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+      }
+
+      .rail-inner {
+        display: grid;
+        gap: 0.5rem;
+        text-align: center;
+      }
+
+      .rail-inner span {
+        position: relative;
+      }
+
+      .rail-inner span:not(:last-child)::after {
+        content: "";
+        display: block;
+        width: 1px;
+        height: 26px;
+        margin: 0.5rem auto 0;
+        background: rgba(146, 116, 255, 0.2);
+      }
+
+      .content-track {
+        position: relative;
+        z-index: 3;
+      }
+
+      .route-section {
+        min-height: calc(100vh - 68px);
+        display: grid;
+        align-content: center;
+        gap: 1.25rem;
+        padding: clamp(3rem, 7vw, 5.4rem) 0;
+        scroll-margin-top: 68px;
+      }
+
+      .route-code {
+        margin: 0;
+        color: var(--purple);
+        font-family: var(--mono);
+        font-size: 0.92rem;
+        font-weight: 500;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+      }
+
+      .intro {
+        margin: 0;
+        color: #929195;
+        font-size: clamp(1.05rem, 2vw, 1.35rem);
+        font-weight: 700;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      h1,
+      h2 {
+        margin-bottom: 0;
+        font-family: var(--serif);
+        color: var(--ink);
+        font-weight: 900;
+        letter-spacing: -0.075em;
+      }
+
+      h1 {
+        max-width: 8ch;
+        font-size: clamp(4.1rem, 10vw, 7.6rem);
+        line-height: 0.78;
+      }
+
+      h2 {
+        max-width: 11ch;
+        font-size: clamp(3rem, 7vw, 5.1rem);
+        line-height: 0.86;
+      }
+
+      h3 {
+        margin-bottom: 0.35rem;
+        font-family: var(--serif);
+        font-size: clamp(1.35rem, 2.4vw, 1.8rem);
+        letter-spacing: -0.045em;
+      }
+
+      .role-line {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin: 0.7rem 0 0;
+        color: var(--coral);
+        font-family: var(--mono);
+        font-size: 0.98rem;
+        font-weight: 800;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+      }
+
+      .role-line::before {
+        content: "";
+        width: 54px;
+        height: 3px;
+        background: var(--purple);
+      }
+
+      .lead {
+        max-width: 34rem;
+        margin: 0;
+        color: var(--ink-soft);
+        font-size: clamp(1.1rem, 2vw, 1.38rem);
+        font-weight: 600;
+        line-height: 1.85;
+      }
+
+      .body-copy {
+        max-width: 37rem;
+        color: var(--ink-soft);
+        font-size: 1.05rem;
+        font-weight: 560;
+        line-height: 1.85;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1rem;
+      }
+
+      .info-card,
+      .project-card,
+      .timeline-item,
+      .achievement,
+      .contact-link {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--card);
+        box-shadow: 0 12px 32px rgba(34, 35, 42, 0.06);
+      }
+
+      .info-card {
+        min-height: 142px;
+        padding: 1.25rem;
+      }
+
+      .icon {
+        display: inline-grid;
+        place-items: center;
+        width: 34px;
+        height: 34px;
+        margin-bottom: 0.8rem;
+        border-radius: 50%;
+        background: rgba(146, 116, 255, 0.1);
+        color: var(--purple);
+        font-size: 1.05rem;
+      }
+
+      .label {
+        display: block;
+        margin-bottom: 0.4rem;
+        color: var(--muted);
+        font-family: var(--mono);
+        font-size: 0.74rem;
+        font-weight: 800;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      .value {
+        color: #30313a;
+        font-size: 1.03rem;
+        font-weight: 800;
+        line-height: 1.55;
+      }
+
+      .skill-group {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+      }
+
+      .skill-row {
+        display: grid;
+        gap: 0.6rem;
+      }
+
+      .skill-heading {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        color: var(--muted);
+        font-family: var(--mono);
+        font-size: 0.8rem;
+        font-weight: 800;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      .skill-heading::before {
+        content: "";
+        width: 30px;
+        height: 1px;
+        background: #c9c8c3;
+      }
+
+      .chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.58rem;
+      }
+
+      .chip {
+        border: 1px solid var(--line);
+        border-radius: 5px;
+        background: rgba(255, 255, 255, 0.82);
+        padding: 0.58rem 0.78rem;
+        color: #33343c;
+        font-family: var(--mono);
+        font-size: 0.88rem;
+        font-weight: 800;
+        box-shadow: 0 8px 18px rgba(34, 35, 42, 0.06);
+      }
+
+      .timeline {
+        position: relative;
+        display: grid;
+        gap: 1rem;
+      }
+
+      .timeline::before {
+        content: "";
+        position: absolute;
+        top: 0.8rem;
+        bottom: 0.8rem;
+        left: 1.05rem;
+        width: 1px;
+        background: var(--line);
+      }
+
+      .timeline-item {
+        position: relative;
+        display: grid;
+        gap: 0.4rem;
+        margin-left: 2.8rem;
+        padding: 1.05rem 1.1rem;
+      }
+
+      .timeline-item::before {
+        content: "";
+        position: absolute;
+        left: -2.25rem;
+        top: 1.08rem;
+        width: 1rem;
+        height: 1rem;
+        border: 5px solid color-mix(in srgb, var(--item-color, var(--purple)) 24%, transparent);
+        border-radius: 50%;
+        background: var(--item-color, var(--purple));
+      }
+
+      .timeline-meta {
+        color: var(--muted);
+        font-family: var(--mono);
+        font-size: 0.8rem;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+      }
+
+      .timeline-item p {
+        margin: 0;
+        color: var(--ink-soft);
+        font-weight: 560;
+        line-height: 1.7;
+      }
+
+      .project-list {
+        display: grid;
+        gap: 1rem;
+      }
+
+      .project-card {
+        padding: 1.2rem;
+        border-left: 4px solid var(--accent, var(--purple));
+      }
+
+      .project-top {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 1rem;
+        margin-bottom: 0.65rem;
+      }
+
+      .project-icon {
+        font-size: 1.35rem;
+      }
+
+      .project-card p {
+        margin: 0 0 0.8rem;
+        color: var(--ink-soft);
+        font-weight: 560;
+        line-height: 1.65;
+      }
+
+      .project-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.45rem;
+      }
+
+      .tag {
+        border-radius: 4px;
+        background: rgba(34, 35, 42, 0.075);
+        padding: 0.36rem 0.52rem;
+        color: #5f6066;
+        font-family: var(--mono);
+        font-size: 0.76rem;
+        font-weight: 800;
+      }
+
+      .achievement-list {
+        display: grid;
+        gap: 0.75rem;
+      }
+
+      .achievement {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 0.75rem;
+        padding: 0.95rem;
+        color: var(--ink-soft);
+        font-weight: 620;
+        line-height: 1.6;
+      }
+
+      .achievement strong {
+        color: var(--ink);
+      }
+
+      .contact-stack {
+        display: grid;
+        gap: 0.9rem;
+        max-width: 28rem;
+      }
+
+      .contact-link {
+        display: flex;
+        align-items: center;
+        gap: 0.85rem;
+        padding: 1rem 1.1rem;
+        color: var(--ink);
+        font-family: var(--mono);
+        font-weight: 800;
+        text-decoration: none;
+        word-break: break-word;
+        transition:
+          transform 180ms ease,
+          border-color 180ms ease,
+          background 180ms ease;
+      }
+
+      .contact-link:hover,
+      .contact-link:focus-visible {
+        transform: translateX(4px);
+        border-color: var(--purple);
+        background: white;
+      }
+
+      .road-stage {
+        position: sticky;
+        top: 68px;
+        height: calc(100vh - 68px);
+        min-height: 650px;
+        overflow: hidden;
+      }
+
+      .road-stage::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(180deg, rgba(242, 245, 250, 0.95), rgba(247, 246, 242, 0.22) 34%, rgba(247, 246, 242, 0)),
+          radial-gradient(circle at 40% 14%, rgba(146, 116, 255, 0.1), transparent 20rem);
+      }
+
+      .mountains {
+        position: absolute;
+        inset: 9% 0 auto 0;
+        height: 28%;
+        opacity: 0.32;
+        pointer-events: none;
+      }
+
+      .road-svg {
+        position: absolute;
+        inset: -3% -12% -2% -8%;
+        width: 122%;
+        height: 106%;
+        filter: drop-shadow(0 30px 28px rgba(34, 35, 42, 0.18));
+      }
+
+      .road-guard,
+      .road-shadow,
+      .road-asphalt,
+      .road-center,
+      .route-progress {
+        fill: none;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .road-guard {
+        stroke: var(--road-dark);
+        stroke-width: 86;
+      }
+
+      .road-shadow {
+        stroke: var(--road-shadow);
+        stroke-width: 74;
+      }
+
+      .road-asphalt {
+        stroke: var(--road);
+        stroke-width: 58;
+      }
+
+      .road-center {
+        stroke: rgba(255, 255, 255, 0.62);
+        stroke-width: 4;
+      }
+
+      .route-progress {
+        stroke: url(#route-gradient);
+        stroke-width: 4;
+        opacity: 0.9;
+      }
+
+      .road-sign {
+        position: absolute;
+        z-index: 8;
+        min-width: 86px;
+        border: 2px solid rgba(255, 255, 255, 0.72);
+        border-radius: 3px;
+        background: #5f9367;
+        color: white;
+        box-shadow:
+          inset 0 0 0 1px rgba(255, 255, 255, 0.28),
+          0 12px 24px rgba(34, 35, 42, 0.14);
+        padding: 0.38rem 0.55rem;
+        text-align: center;
+        transform: translate(-50%, -118%);
+        transition:
+          transform 180ms ease,
+          background 180ms ease,
+          box-shadow 180ms ease;
+        pointer-events: auto;
+        cursor: pointer;
+      }
+
+      .road-sign::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: calc(100% + 2px);
+        width: 1px;
+        height: 35px;
+        background: rgba(86, 86, 86, 0.58);
+      }
+
+      .road-sign span {
+        display: block;
+        font-family: var(--mono);
+        font-size: 0.48rem;
+        font-weight: 900;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .road-sign strong {
+        display: block;
+        margin-top: 0.08rem;
+        font-family: var(--mono);
+        font-size: 0.62rem;
+        font-weight: 900;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .road-sign.is-active {
+        background: #30663b;
+        box-shadow:
+          inset 0 0 0 1px rgba(255, 255, 255, 0.32),
+          0 0 0 6px rgba(146, 116, 255, 0.14),
+          0 18px 30px rgba(34, 35, 42, 0.2);
+        transform: translate(-50%, -124%) scale(1.05);
+      }
+
+      .mile-marker {
+        position: absolute;
+        z-index: 7;
+        width: 18px;
+        height: 18px;
+        border: 4px solid rgba(255, 220, 99, 0.38);
+        border-radius: 50%;
+        background: var(--amber);
+        transform: translate(-50%, -50%);
+        box-shadow: 0 0 0 2px rgba(34, 35, 42, 0.18);
+        pointer-events: none;
+      }
+
+      .car {
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 10;
+        width: 42px;
+        height: 30px;
+        transform: translate(-50%, -50%);
+        transform-origin: 50% 50%;
+        filter: drop-shadow(0 8px 8px rgba(34, 35, 42, 0.32));
+        pointer-events: none;
+      }
+
+      .road-note {
+        position: absolute;
+        left: 45%;
+        top: 3.8%;
+        z-index: 5;
+        color: rgba(146, 116, 255, 0.62);
+        font-family: var(--mono);
+        font-size: 0.52rem;
+        font-weight: 800;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+      }
+
+      .road-prop {
+        position: absolute;
+        z-index: 6;
+        min-width: 72px;
+        border: 2px solid rgba(255, 255, 255, 0.7);
+        border-radius: 3px;
+        background: rgba(78, 126, 86, 0.72);
+        color: white;
+        box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.25);
+        padding: 0.34rem 0.45rem;
+        text-align: center;
+      }
+
+      .road-prop::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 100%;
+        width: 1px;
+        height: 35px;
+        background: rgba(86, 86, 86, 0.55);
+      }
+
+      .road-prop span,
+      .road-prop strong {
+        display: block;
+        font-family: var(--mono);
+        font-size: 0.47rem;
+        font-weight: 900;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .prop-caution {
+        left: 25%;
+        top: 43%;
+      }
+
+      .prop-speed {
+        right: 22%;
+        top: 60%;
+      }
+
+      .status-panel {
+        position: absolute;
+        right: 2rem;
+        bottom: 2rem;
+        z-index: 12;
+        width: min(260px, calc(100% - 3rem));
+        border: 1px solid rgba(34, 35, 42, 0.1);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.76);
+        padding: 0.9rem;
+        box-shadow: 0 18px 40px rgba(34, 35, 42, 0.12);
+        backdrop-filter: blur(12px);
+      }
+
+      .status-panel small {
+        display: block;
+        margin-bottom: 0.3rem;
+        color: var(--muted);
+        font-family: var(--mono);
+        font-size: 0.66rem;
+        font-weight: 900;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      .status-panel strong {
+        display: block;
+        margin-bottom: 0.75rem;
+        font-family: var(--serif);
+        font-size: 1.45rem;
+        letter-spacing: -0.04em;
+      }
+
+      .meter {
+        height: 6px;
+        border-radius: 999px;
+        background: rgba(34, 35, 42, 0.12);
+        overflow: hidden;
+      }
+
+      .meter span {
+        display: block;
+        width: calc(var(--progress, 0) * 100%);
+        height: 100%;
+        border-radius: inherit;
+        background: linear-gradient(90deg, var(--purple), var(--amber), var(--mint));
+      }
+
+      .footer {
+        margin-left: 64px;
+        padding: 2rem 5.8vw 3rem;
+        color: var(--muted);
+        font-family: var(--mono);
+        font-size: 0.76rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      @media (max-width: 1060px) {
+        .portfolio {
+          grid-template-columns: 48px 1fr;
+          padding-right: 1rem;
+        }
+
+        .road-stage {
+          grid-column: 2;
+          grid-row: 1;
+          height: 58vh;
+          min-height: 480px;
+          margin-top: 1rem;
+          border-bottom: 1px solid var(--line);
+        }
+
+        .content-track {
+          grid-column: 2;
+          grid-row: 2;
+        }
+
+        .route-section {
+          min-height: auto;
+          padding: 4rem 0;
+        }
+      }
+
+      @media (max-width: 720px) {
+        .nav {
+          align-items: flex-start;
+          flex-direction: column;
+          min-height: 118px;
+          padding: 0.85rem 1rem;
+        }
+
+        .nav-actions {
+          width: 100%;
+        }
+
+        .button {
+          min-height: 38px;
+          padding: 0.58rem 0.72rem;
+          font-size: 0.7rem;
+        }
+
+        .portfolio {
+          grid-template-columns: 1fr;
+          gap: 0;
+          padding: 118px 1rem 0;
+        }
+
+        .story-rail {
+          display: none;
+        }
+
+        .road-stage,
+        .content-track {
+          grid-column: 1;
+        }
+
+        .road-stage {
+          top: 118px;
+          height: 430px;
+          min-height: 430px;
+        }
+
+        .road-svg {
+          inset: -1% -34% -4% -28%;
+          width: 158%;
+        }
+
+        .road-sign {
+          min-width: 66px;
+          padding: 0.28rem 0.35rem;
+        }
+
+        .road-sign strong {
+          font-size: 0.5rem;
+        }
+
+        .road-sign span {
+          font-size: 0.4rem;
+        }
+
+        .road-note,
+        .road-prop,
+        .status-panel {
+          display: none;
+        }
+
+        .route-section {
+          padding: 3.4rem 0;
+        }
+
+        .grid,
+        .project-top {
+          grid-template-columns: 1fr;
+        }
+
+        .grid {
+          display: grid;
+        }
+
+        .footer {
+          margin-left: 0;
+          padding: 2rem 1rem 3rem;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          scroll-behavior: auto !important;
+          transition-duration: 0.01ms !important;
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#home">Skip to content</a>
+
+    <header class="action-bar">
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="#home" aria-label="Nisat Sama home">
+          <span class="brand-mark" aria-hidden="true">NS</span>
+          <span>Nisat Sama</span>
+        </a>
+        <div class="nav-actions">
+          <a class="button primary" href="resume.html" target="_blank" rel="noreferrer">
+            Resume
+            <span aria-hidden="true">↗</span>
+          </a>
+          <a class="button ghost" href="https://github.com/nisatsama" target="_blank" rel="noreferrer">
+            GitHub
+            <span aria-hidden="true">↗</span>
+          </a>
+          <a class="button ghost" href="https://www.linkedin.com/in/nisat-sama-aa02a53a3/" target="_blank" rel="noreferrer">
+            LinkedIn
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="portfolio">
+      <aside class="story-rail" aria-hidden="true">
+        <div class="rail-inner">
+          <span>Start</span>
+          <span>Learn</span>
+          <span>Build</span>
+          <span>Ship</span>
+          <span>Deploy</span>
+          <span>Repeat</span>
+        </div>
+      </aside>
+
+      <section class="content-track" aria-label="Portfolio sections">
+        <article class="route-section" id="home" data-stop="Home" data-code="Exit 01" data-color="#9274ff">
+          <p class="route-code">// beginning of journey</p>
+          <p class="intro">Hi, I'm</p>
+          <h1>NISAT<br />SAMA</h1>
+          <p class="role-line">SDE</p>
+          <p class="lead">
+            Building the roads others travel on — scalable APIs, real-time systems, and useful AI-powered web products.
+            One commit at a time.
+          </p>
+          <div class="button-row" aria-label="Portfolio actions">
+            <a class="button primary" href="resume.html" target="_blank" rel="noreferrer">Resume ↗</a>
+            <a class="button" href="#projects">Projects →</a>
+            <a class="button ghost" href="mailto:nisatsama7547@gmail.com">Email</a>
+          </div>
+        </article>
+
+        <article class="route-section" id="about" data-stop="About" data-code="Exit 02" data-color="#ff775f">
+          <p class="route-code">Exit 02 · About</p>
+          <h2>Who I Am</h2>
+          <p class="body-copy">
+            I’m a Computer Science & Engineering undergraduate at Adamas University, Kolkata, currently holding a
+            9.325/10 CGPA. I like backend-heavy product work: authentication, databases, clean REST APIs, deployment
+            flows, and real-time collaboration features that feel invisible when they work well.
+          </p>
+          <div class="grid">
+            <div class="info-card">
+              <span class="icon" aria-hidden="true">📍</span>
+              <span class="label">Based in</span>
+              <span class="value">Kolkata, India</span>
+            </div>
+            <div class="info-card">
+              <span class="icon" aria-hidden="true">🎓</span>
+              <span class="label">Degree</span>
+              <span class="value">B.Tech, Computer Science & Engineering</span>
+            </div>
+            <div class="info-card">
+              <span class="icon" aria-hidden="true">⚙️</span>
+              <span class="label">Focus</span>
+              <span class="value">Backend systems, APIs, real-time apps</span>
+            </div>
+            <div class="info-card">
+              <span class="icon" aria-hidden="true">✉️</span>
+              <span class="label">Contact</span>
+              <span class="value">nisatsama7547@gmail.com</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="route-section" id="skills" data-stop="Skills" data-code="Exit 03" data-color="#ffc845">
+          <p class="route-code">Exit 03 · Skills</p>
+          <h2>Toolbox</h2>
+          <div class="skill-group">
+            <div class="skill-row">
+              <span class="skill-heading">Languages</span>
+              <div class="chips">
+                <span class="chip">Java</span>
+                <span class="chip">JavaScript</span>
+                <span class="chip">Python</span>
+                <span class="chip">C</span>
+              </div>
+            </div>
+            <div class="skill-row">
+              <span class="skill-heading">Backend</span>
+              <div class="chips">
+                <span class="chip">Node.js</span>
+                <span class="chip">Express.js</span>
+                <span class="chip">Spring Boot</span>
+                <span class="chip">REST APIs</span>
+                <span class="chip">JWT Authentication</span>
+              </div>
+            </div>
+            <div class="skill-row">
+              <span class="skill-heading">Frontend</span>
+              <div class="chips">
+                <span class="chip">React.js</span>
+                <span class="chip">HTML5</span>
+                <span class="chip">CSS3</span>
+                <span class="chip">Tailwind CSS</span>
+                <span class="chip">Bootstrap</span>
+              </div>
+            </div>
+            <div class="skill-row">
+              <span class="skill-heading">Database</span>
+              <div class="chips">
+                <span class="chip">MySQL</span>
+                <span class="chip">MongoDB</span>
+              </div>
+            </div>
+            <div class="skill-row">
+              <span class="skill-heading">Cloud & Tools</span>
+              <div class="chips">
+                <span class="chip">Docker</span>
+                <span class="chip">Google Cloud Run</span>
+                <span class="chip">Vercel</span>
+                <span class="chip">Render</span>
+                <span class="chip">Git</span>
+                <span class="chip">GitHub</span>
+                <span class="chip">Postman</span>
+                <span class="chip">Gemini API</span>
+                <span class="chip">Figma</span>
+                <span class="chip">Canva</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="route-section" id="education" data-stop="Education" data-code="Exit 04" data-color="#63a8e8">
+          <p class="route-code">Exit 04 · Education</p>
+          <h2>Learning Route</h2>
+          <div class="timeline">
+            <div class="timeline-item" style="--item-color: var(--purple)">
+              <h3>Adamas University, Kolkata</h3>
+              <span class="timeline-meta">Jul 2024 – May 2028</span>
+              <p>Bachelor of Technology in Computer Science & Engineering. Current CGPA: <strong>9.325 / 10</strong>.</p>
+            </div>
+            <div class="timeline-item" style="--item-color: var(--amber)">
+              <h3>Auxilium Convent School, Barasat</h3>
+              <span class="timeline-meta">ICSE 2022 · ISC 2024</span>
+              <p>Class X: <strong>97%</strong>. Class XII: <strong>95.75%</strong>. Scored 100/100 in Mathematics and Chemistry.</p>
+            </div>
+            <div class="timeline-item" style="--item-color: var(--mint)">
+              <h3>Core Coursework</h3>
+              <span class="timeline-meta">CS Foundations</span>
+              <p>Data Structures & Algorithms, OOP, Operating Systems, DBMS, Computer Networks, and Software Engineering.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="route-section" id="projects" data-stop="Projects" data-code="Exit 05" data-color="#67d6b1">
+          <p class="route-code">Exit 05 · Projects</p>
+          <h2>Destinations</h2>
+          <div class="project-list">
+            <article class="project-card" style="--accent: var(--purple)">
+              <div class="project-top">
+                <div>
+                  <h3>CodeCollab</h3>
+                  <p>Real-time collaborative code editor for concurrent multi-user coding with synchronized sessions.</p>
+                </div>
+                <span class="project-icon" aria-hidden="true">🧑‍💻</span>
+              </div>
+              <p>
+                Built a full-stack collaborative platform using Socket.IO and WebSockets, with room-based architecture
+                and conflict-aware update handling for consistency during simultaneous edits.
+              </p>
+              <div class="project-tags">
+                <span class="tag">React.js</span>
+                <span class="tag">Node.js</span>
+                <span class="tag">Express.js</span>
+                <span class="tag">Socket.IO</span>
+                <span class="tag">Monaco Editor</span>
+                <span class="tag">Docker</span>
+              </div>
+            </article>
+            <article class="project-card" style="--accent: var(--blue)">
+              <div class="project-top">
+                <div>
+                  <h3>Travelogia</h3>
+                  <p>Full-stack travel booking platform with destination search, booking management, and saved favorites.</p>
+                </div>
+                <span class="project-icon" aria-hidden="true">🧭</span>
+              </div>
+              <p>
+                Designed secure RESTful APIs with JWT authentication, protected user/destination/booking routes, and
+                production deployment configuration across Vercel and Render.
+              </p>
+              <div class="project-tags">
+                <span class="tag">React.js</span>
+                <span class="tag">Node.js</span>
+                <span class="tag">Express.js</span>
+                <span class="tag">MongoDB</span>
+                <span class="tag">JWT</span>
+                <span class="tag">Render</span>
+              </div>
+            </article>
+            <article class="project-card" style="--accent: var(--mint)">
+              <div class="project-top">
+                <div>
+                  <h3>ZeroLine</h3>
+                  <p>AI-powered smart productivity assistant for task prioritization and personalized recommendations.</p>
+                </div>
+                <span class="project-icon" aria-hidden="true">🤖</span>
+              </div>
+              <p>
+                Integrated Gemini API for intelligent task prioritization, reminders, Pomodoro sessions, productivity
+                analytics, workload trends, and scalable REST APIs deployed with Google Cloud Run.
+              </p>
+              <div class="project-tags">
+                <span class="tag">React.js</span>
+                <span class="tag">Node.js</span>
+                <span class="tag">MongoDB</span>
+                <span class="tag">Gemini API</span>
+                <span class="tag">Google Cloud Run</span>
+              </div>
+            </article>
+          </div>
+        </article>
+
+        <article class="route-section" id="experience" data-stop="Experience" data-code="Exit 06" data-color="#ff775f">
+          <p class="route-code">Exit 06 · Experience</p>
+          <h2>Miles Logged</h2>
+          <div class="timeline">
+            <div class="timeline-item" style="--item-color: var(--coral)">
+              <h3>AI Web Development Intern — InAmigos Foundation</h3>
+              <span class="timeline-meta">Remote · Jun 2026 – Jul 2026</span>
+              <p>
+                Built a personal portfolio website using Wiz Studio with responsive layout and clean UI presentation.
+                Collaborated with designers and mentors to improve website navigation, responsiveness, and UX.
+              </p>
+            </div>
+            <div class="timeline-item" style="--item-color: var(--amber)">
+              <h3>EdTech Web App Development</h3>
+              <span class="timeline-meta">Production-oriented delivery</span>
+              <p>
+                Translated functional requirements into production-ready EdTech web application pages and presented
+                structured UI/UX recommendations with actionable design improvements.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <article class="route-section" id="achievements" data-stop="Achievements" data-code="Exit 07" data-color="#9274ff">
+          <p class="route-code">Exit 07 · Achievements</p>
+          <h2>Proof of Road</h2>
+          <div class="achievement-list">
+            <div class="achievement">
+              <span aria-hidden="true">🏁</span>
+              <span><strong>450+ DSA problems</strong> solved on LeetCode as <strong>sunkissed_daring</strong>, with contest rating 1561 and 200 Days Badge 2026.</span>
+            </div>
+            <div class="achievement">
+              <span aria-hidden="true">⚡</span>
+              <span>Qualified for <strong>Flipkart GRID 8.0</strong> Software Development Track, Round 2.</span>
+            </div>
+            <div class="achievement">
+              <span aria-hidden="true">🌱</span>
+              <span>Selected for <strong>Infosys Springboard Pragati: Path to Future — Cohort 9</strong>.</span>
+            </div>
+            <div class="achievement">
+              <span aria-hidden="true">🛡️</span>
+              <span>Built an <strong>Audio Call Analyzer</strong> for real-time fraud-call detection using Python, ML, NLP, and FastAPI at HCL GUVI India AI Impact Buildathon 2026.</span>
+            </div>
+            <div class="achievement">
+              <span aria-hidden="true">📈</span>
+              <span>Ranked <strong>17th college-wide</strong> on GeeksforGeeks, demonstrating consistent competitive programming performance.</span>
+            </div>
+            <div class="achievement">
+              <span aria-hidden="true">🎖️</span>
+              <span>Recognized among the <strong>top 0.1%</strong> nationwide achievers in Chemistry, ISC 2024.</span>
+            </div>
+          </div>
+          <div class="chips" aria-label="Certifications">
+            <span class="chip">AWS Cloud Practitioner Essentials</span>
+            <span class="chip">Azure Fundamentals</span>
+            <span class="chip">HackerRank Software Engineer Intern</span>
+            <span class="chip">HackerRank SQL</span>
+            <span class="chip">Spring Framework</span>
+          </div>
+        </article>
+
+        <article class="route-section" id="contact" data-stop="Contact" data-code="Exit 08" data-color="#67d6b1">
+          <p class="route-code">Exit 08 · Contact</p>
+          <h2>Destination Reached.</h2>
+          <p class="route-code">But the journey continues.</p>
+          <p class="lead">I’m always looking for interesting problems to solve. Let’s build something useful together.</p>
+          <div class="contact-stack" aria-label="Contact links">
+            <a class="contact-link" href="mailto:nisatsama7547@gmail.com">
+              <span class="icon" aria-hidden="true">✉️</span>
+              <span>nisatsama7547@gmail.com</span>
+            </a>
+            <a class="contact-link" href="https://github.com/nisatsama" target="_blank" rel="noreferrer">
+              <span class="icon" aria-hidden="true">🐙</span>
+              <span>github.com/nisatsama</span>
+            </a>
+            <a class="contact-link" href="https://www.linkedin.com/in/nisat-sama-aa02a53a3/" target="_blank" rel="noreferrer">
+              <span class="icon" aria-hidden="true">💼</span>
+              <span>linkedin.com/in/nisat-sama-aa02a53a3</span>
+            </a>
+          </div>
+        </article>
+      </section>
+
+      <aside class="road-stage" aria-label="Animated portfolio road">
+        <svg class="mountains" viewBox="0 0 900 260" aria-hidden="true">
+          <path d="M34 235 L160 70 L250 176 L330 58 L460 235 Z" fill="#e9e8e4" />
+          <path d="M270 235 L424 28 L566 235 Z" fill="#eeedea" />
+          <path d="M494 235 L668 82 L826 235 Z" fill="#e7e6e2" />
+          <path d="M84 76 C108 30 169 31 192 75" fill="none" stroke="#deddd8" />
+          <path d="M628 62 C655 20 716 25 737 66" fill="none" stroke="#deddd8" />
+        </svg>
+
+        <span class="road-note">Destination reached. The journey continues.</span>
+
+        <svg class="road-svg" viewBox="0 0 980 1100" preserveAspectRatio="none" aria-hidden="true">
+          <defs>
+            <linearGradient id="route-gradient" x1="0%" y1="100%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#ffc845" />
+              <stop offset="45%" stop-color="#9274ff" />
+              <stop offset="100%" stop-color="#67d6b1" />
+            </linearGradient>
+          </defs>
+          <path
+            class="road-guard"
+            d="M596 1073 C545 900 187 862 272 626 C348 416 828 527 853 286 C871 112 537 193 606 49 C631 -4 700 18 716 49 C758 123 952 92 983 242"
+          />
+          <path
+            class="road-shadow"
+            d="M596 1073 C545 900 187 862 272 626 C348 416 828 527 853 286 C871 112 537 193 606 49 C631 -4 700 18 716 49 C758 123 952 92 983 242"
+          />
+          <path
+            id="road-path"
+            class="road-asphalt"
+            d="M596 1073 C545 900 187 862 272 626 C348 416 828 527 853 286 C871 112 537 193 606 49 C631 -4 700 18 716 49 C758 123 952 92 983 242"
+          />
+          <path
+            class="road-center"
+            d="M596 1073 C545 900 187 862 272 626 C348 416 828 527 853 286 C871 112 537 193 606 49 C631 -4 700 18 716 49 C758 123 952 92 983 242"
+          />
+          <path
+            id="route-progress"
+            class="route-progress"
+            d="M596 1073 C545 900 187 862 272 626 C348 416 828 527 853 286 C871 112 537 193 606 49 C631 -4 700 18 716 49 C758 123 952 92 983 242"
+          />
+        </svg>
+
+        <div class="road-prop prop-caution" aria-hidden="true">
+          <span>Caution</span>
+          <strong>Bugs Ahead</strong>
+        </div>
+        <div class="road-prop prop-speed" aria-hidden="true">
+          <span>Speed Limit</span>
+          <strong>404</strong>
+        </div>
+
+        <div class="car" id="car" aria-hidden="true">
+          <svg viewBox="0 0 70 44">
+            <g transform="translate(4 8)">
+              <path d="M9 20 C11 11 19 6 31 6 H40 C49 6 56 12 59 22 L61 27 C62 31 59 34 54 34 H13 C8 34 5 31 6 26Z" fill="#4ccca5" />
+              <path d="M20 10 H39 C45 10 50 15 52 21 H15 C16 16 18 12 20 10Z" fill="#eef8ff" />
+              <path d="M32 10 V21" stroke="#c8d9e7" stroke-width="2.5" />
+              <circle cx="19" cy="34" r="6.5" fill="#20232b" />
+              <circle cx="51" cy="34" r="6.5" fill="#20232b" />
+              <circle cx="19" cy="34" r="2.5" fill="#f4f1eb" />
+              <circle cx="51" cy="34" r="2.5" fill="#f4f1eb" />
+              <path d="M61 23 H66" stroke="#ffc845" stroke-width="3" stroke-linecap="round" />
+            </g>
+          </svg>
+        </div>
+
+        <div class="status-panel" aria-live="polite">
+          <small>Current exit</small>
+          <strong id="current-stop">Home</strong>
+          <div class="meter" aria-hidden="true"><span id="progress-meter"></span></div>
+        </div>
+      </aside>
+    </main>
+
+    <footer class="footer">
+      © <span id="year"></span> Nisat Sama · Built for the long road.
+    </footer>
+
+    <script>
+      const stops = Array.from(document.querySelectorAll(".route-section"));
+      const roadStage = document.querySelector(".road-stage");
+      const roadPath = document.getElementById("road-path");
+      const routeProgress = document.getElementById("route-progress");
+      const roadSvg = document.querySelector(".road-svg");
+      const car = document.getElementById("car");
+      const currentStop = document.getElementById("current-stop");
+      const progressMeter = document.getElementById("progress-meter");
+      const year = document.getElementById("year");
+
+      const markerFractions = [0.02, 0.16, 0.3, 0.44, 0.58, 0.72, 0.86, 0.98];
+      const pathLength = roadPath.getTotalLength();
+      const signs = [];
+      const markers = [];
+
+      routeProgress.style.strokeDasharray = String(pathLength);
+      routeProgress.style.strokeDashoffset = String(pathLength);
+      year.textContent = new Date().getFullYear();
+
+      stops.forEach((stop, index) => {
+        const sign = document.createElement("button");
+        sign.className = "road-sign";
+        sign.type = "button";
+        sign.setAttribute("aria-label", `Go to ${stop.dataset.stop}`);
+        sign.innerHTML = `<span>${stop.dataset.code}</span><strong>${stop.dataset.stop}</strong>`;
+        sign.addEventListener("click", () => {
+          stop.scrollIntoView({ behavior: "smooth", block: "center" });
+        });
+
+        const marker = document.createElement("span");
+        marker.className = "mile-marker";
+        marker.setAttribute("aria-hidden", "true");
+
+        roadStage.append(marker, sign);
+        signs.push(sign);
+        markers.push(marker);
+      });
+
+      function clamp(value, min, max) {
+        return Math.max(min, Math.min(max, value));
+      }
+
+      function lerp(start, end, progress) {
+        return start + (end - start) * progress;
+      }
+
+      function roadPointAt(fraction) {
+        return roadPath.getPointAtLength(clamp(fraction, 0, 1) * pathLength);
+      }
+
+      function svgPointToStage(point) {
+        const svgRect = roadSvg.getBoundingClientRect();
+        const stageRect = roadStage.getBoundingClientRect();
+        const viewBox = roadSvg.viewBox.baseVal;
+        return {
+          x: ((point.x - viewBox.x) / viewBox.width) * svgRect.width + svgRect.left - stageRect.left,
+          y: ((point.y - viewBox.y) / viewBox.height) * svgRect.height + svgRect.top - stageRect.top,
+        };
+      }
+
+      function positionRoadItems() {
+        markerFractions.forEach((fraction, index) => {
+          const point = svgPointToStage(roadPointAt(fraction));
+          markers[index].style.left = `${point.x}px`;
+          markers[index].style.top = `${point.y}px`;
+          signs[index].style.left = `${point.x}px`;
+          signs[index].style.top = `${point.y - 20}px`;
+        });
+      }
+
+      function getJourneyState() {
+        const viewportAnchor = window.scrollY + window.innerHeight * 0.54;
+        const centers = stops.map((stop) => stop.offsetTop + stop.offsetHeight / 2);
+
+        if (viewportAnchor <= centers[0]) {
+          return { fraction: markerFractions[0], activeIndex: 0, totalProgress: 0 };
+        }
+
+        if (viewportAnchor >= centers[centers.length - 1]) {
+          return {
+            fraction: markerFractions[markerFractions.length - 1],
+            activeIndex: centers.length - 1,
+            totalProgress: 1,
+          };
+        }
+
+        let segmentIndex = 0;
+        for (let index = 0; index < centers.length - 1; index += 1) {
+          if (viewportAnchor >= centers[index] && viewportAnchor <= centers[index + 1]) {
+            segmentIndex = index;
+            break;
+          }
+        }
+
+        const segmentProgress = clamp(
+          (viewportAnchor - centers[segmentIndex]) / (centers[segmentIndex + 1] - centers[segmentIndex]),
+          0,
+          1
+        );
+        const easedProgress = segmentProgress * segmentProgress * (3 - 2 * segmentProgress);
+        const activeIndex = segmentProgress < 0.5 ? segmentIndex : segmentIndex + 1;
+
+        return {
+          fraction: lerp(markerFractions[segmentIndex], markerFractions[segmentIndex + 1], easedProgress),
+          activeIndex,
+          totalProgress: (segmentIndex + segmentProgress) / (centers.length - 1),
+        };
+      }
+
+      function updateRoad() {
+        const { fraction, activeIndex, totalProgress } = getJourneyState();
+        const point = roadPointAt(fraction);
+        const nextPoint = roadPointAt(Math.min(1, fraction + 0.004));
+        const previousPoint = roadPointAt(Math.max(0, fraction - 0.004));
+        const stagePoint = svgPointToStage(point);
+        const angle = (Math.atan2(nextPoint.y - previousPoint.y, nextPoint.x - previousPoint.x) * 180) / Math.PI;
+
+        car.style.transform = `translate(${stagePoint.x}px, ${stagePoint.y}px) translate(-50%, -50%) rotate(${angle}deg)`;
+        currentStop.textContent = stops[activeIndex].dataset.stop;
+        progressMeter.parentElement.style.setProperty("--progress", totalProgress.toFixed(3));
+        routeProgress.style.strokeDashoffset = String(pathLength * (1 - totalProgress));
+
+        stops.forEach((stop, index) => {
+          const isActive = index === activeIndex;
+          stop.classList.toggle("is-active", isActive);
+          signs[index].classList.toggle("is-active", isActive);
+        });
+      }
+
+      let ticking = false;
+
+      function render() {
+        positionRoadItems();
+        updateRoad();
+        ticking = false;
+      }
+
+      function requestRender() {
+        if (!ticking) {
+          window.requestAnimationFrame(render);
+          ticking = true;
+        }
+      }
+
+      window.addEventListener("scroll", requestRender, { passive: true });
+      window.addEventListener("resize", requestRender);
+      window.addEventListener("load", render);
+      render();
+    </script>
+  </body>
+</html>

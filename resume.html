@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Nisat Sama | Resume</title>
+    <style>
+      :root {
+        --ink: #1f2530;
+        --muted: #596273;
+        --rule: #8c93a0;
+        --accent: #233b72;
+        --paper: #ffffff;
+        --soft: #f4f6f9;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        color: var(--ink);
+        font-family: "Segoe UI", Arial, sans-serif;
+        background: #e9edf3;
+        line-height: 1.42;
+      }
+
+      a {
+        color: var(--accent);
+      }
+
+      .toolbar {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        display: flex;
+        justify-content: center;
+        gap: 0.75rem;
+        padding: 0.75rem;
+        background: rgba(233, 237, 243, 0.88);
+        backdrop-filter: blur(12px);
+      }
+
+      .toolbar a,
+      .toolbar button {
+        border: 1px solid var(--accent);
+        border-radius: 4px;
+        background: var(--paper);
+        color: var(--accent);
+        cursor: pointer;
+        font: inherit;
+        font-weight: 700;
+        padding: 0.55rem 0.8rem;
+        text-decoration: none;
+      }
+
+      .page {
+        width: min(920px, calc(100% - 2rem));
+        margin: 1rem auto 3rem;
+        background: var(--paper);
+        box-shadow: 0 20px 55px rgba(31, 37, 48, 0.16);
+        padding: 2rem 2.25rem;
+      }
+
+      header {
+        text-align: center;
+        border-bottom: 2px solid var(--accent);
+        padding-bottom: 0.55rem;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: 1.9rem;
+        letter-spacing: 0.08em;
+      }
+
+      .contact {
+        margin-top: 0.3rem;
+        color: var(--ink);
+        font-size: 0.86rem;
+      }
+
+      section {
+        margin-top: 0.9rem;
+      }
+
+      h2 {
+        margin: 0 0 0.35rem;
+        border-bottom: 1px solid var(--rule);
+        color: var(--accent);
+        font-size: 0.96rem;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+
+      h3 {
+        margin: 0;
+        font-size: 0.95rem;
+      }
+
+      p {
+        margin: 0.18rem 0;
+      }
+
+      ul {
+        margin: 0.25rem 0 0;
+        padding-left: 1.25rem;
+      }
+
+      li {
+        margin: 0.18rem 0;
+      }
+
+      .row {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+      }
+
+      .muted {
+        color: var(--muted);
+        font-size: 0.86rem;
+        white-space: nowrap;
+      }
+
+      .skill-line {
+        margin: 0.3rem 0;
+      }
+
+      .project-title {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 1rem;
+        border-bottom: 1px solid #c8ccd3;
+        padding-bottom: 0.12rem;
+      }
+
+      .project-title span {
+        color: var(--muted);
+        font-size: 0.82rem;
+        font-weight: 700;
+      }
+
+      .certs {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.35rem 1rem;
+      }
+
+      @media print {
+        body {
+          background: white;
+        }
+
+        .toolbar {
+          display: none;
+        }
+
+        .page {
+          width: auto;
+          margin: 0;
+          box-shadow: none;
+          padding: 0;
+        }
+      }
+
+      @media (max-width: 680px) {
+        .page {
+          padding: 1.25rem;
+        }
+
+        .row,
+        .project-title {
+          grid-template-columns: 1fr;
+          flex-direction: column;
+          gap: 0.15rem;
+        }
+
+        .muted {
+          white-space: normal;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="toolbar">
+      <a href="index.html">Back to portfolio</a>
+      <button type="button" onclick="window.print()">Print / Save PDF</button>
+    </div>
+
+    <main class="page">
+      <header>
+        <h1>NISAT SAMA</h1>
+        <div class="contact">
+          +91 7439730487 &nbsp;|&nbsp;
+          <a href="mailto:nisatsama7547@gmail.com">nisatsama7547@gmail.com</a> &nbsp;|&nbsp;
+          <a href="https://www.linkedin.com/in/nisat-sama-aa02a53a3/" target="_blank" rel="noreferrer">LinkedIn</a>
+          &nbsp;|&nbsp;
+          <a href="https://github.com/nisatsama" target="_blank" rel="noreferrer">GitHub</a>
+          &nbsp;|&nbsp; LeetCode &nbsp;|&nbsp; Portfolio
+        </div>
+      </header>
+
+      <section>
+        <h2>Education</h2>
+        <div class="row">
+          <strong>Adamas University, Kolkata</strong>
+          <span class="muted">Jul 2024 – May 2028</span>
+        </div>
+        <p>Bachelor of Technology (B.Tech), Computer Science & Engineering</p>
+        <p><strong>CGPA:</strong> 9.325 / 10</p>
+        <div class="row">
+          <strong>Auxilium Convent School, Barasat</strong>
+          <span class="muted">May 2024 / June 2022</span>
+        </div>
+        <p><em>ISC (Class XII):</em> 95.75% &nbsp;&nbsp; <em>ICSE (Class X):</em> 97%</p>
+      </section>
+
+      <section>
+        <h2>Technical Skills</h2>
+        <p class="skill-line"><strong>Languages:</strong> Java, JavaScript, Python, C</p>
+        <p class="skill-line"><strong>Relevant Coursework:</strong> Data Structures & Algorithms, Object-Oriented Programming, Operating Systems, Database Management Systems, Computer Networks, Software Engineering</p>
+        <p class="skill-line"><strong>Backend:</strong> Node.js, Express.js, Spring Boot, REST APIs, JWT Authentication</p>
+        <p class="skill-line"><strong>Frontend:</strong> React.js, HTML5, CSS3, Tailwind CSS, Bootstrap</p>
+        <p class="skill-line"><strong>Database:</strong> MySQL, MongoDB</p>
+        <p class="skill-line"><strong>Cloud & Deployment:</strong> Docker, Google Cloud Run, Vercel, Render</p>
+        <p class="skill-line"><strong>Developer Tools:</strong> Git, GitHub, Postman, Gemini API, Figma, Canva</p>
+      </section>
+
+      <section>
+        <h2>Experience</h2>
+        <div class="row">
+          <h3>AI Web Development Intern — InAmigos Foundation (Remote)</h3>
+          <span class="muted">Jun 2026 – Jul 2026</span>
+        </div>
+        <ul>
+          <li>Built a personal portfolio website using Wiz Studio, focusing on responsive layout and clean UI presentation.</li>
+          <li>Collaborated with designers and mentors to improve website navigation, responsiveness, and overall user experience.</li>
+          <li>Translated functional requirements into a production-ready EdTech web application while adapting quickly to new development tools.</li>
+          <li>Presented UI/UX recommendations through a structured analysis report and communicated actionable design improvements.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Selected Projects</h2>
+        <div class="project-title">
+          <h3>CodeCollab — Real-Time Collaborative Code Editor</h3>
+          <span>React.js, Node.js, Express.js, Socket.IO, Monaco Editor, Docker</span>
+        </div>
+        <ul>
+          <li>Engineered a full-stack collaborative coding platform enabling concurrent multi-user code editing with real-time synchronization.</li>
+          <li>Implemented low-latency communication using Socket.IO and WebSockets to synchronize code changes across active client sessions.</li>
+          <li>Designed a scalable room-based architecture with conflict-aware update handling to maintain consistency during simultaneous edits.</li>
+        </ul>
+
+        <div class="project-title">
+          <h3>Travelogia — Full-Stack Travel Booking Platform</h3>
+          <span>React.js, Node.js, Express.js, MongoDB, JWT, Vercel, Render</span>
+        </div>
+        <ul>
+          <li>Developed a scalable travel booking platform featuring destination search, booking management, and saved favorites.</li>
+          <li>Designed secure RESTful APIs with JWT-based authentication and protected routes for user, destination, and booking services.</li>
+          <li>Configured production-ready deployment with environment-based configuration, CORS, and cloud hosting on Vercel and Render.</li>
+        </ul>
+
+        <div class="project-title">
+          <h3>ZeroLine — AI-Powered Smart Productivity Assistant</h3>
+          <span>React.js, Node.js, Express.js, MongoDB, Gemini API, Google Cloud Run</span>
+        </div>
+        <ul>
+          <li>Developed an AI-powered productivity platform integrating Gemini API for task prioritization and personalized recommendations.</li>
+          <li>Implemented productivity analytics, deadline reminders, Pomodoro-based focus sessions, and workload trend visualization.</li>
+          <li>Designed scalable REST APIs and deployed the full-stack application on Google Cloud Run using Gemini workflows prototyped in Google AI Studio.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Certifications</h2>
+        <div class="certs">
+          <span>AWS Cloud Practitioner Essentials — AWS</span>
+          <span>Azure Fundamentals — Infosys Springboard</span>
+          <span>HackerRank Software Engineer Intern Certification</span>
+          <span>HackerRank SQL</span>
+          <span>Spring Framework — Infosys Springboard</span>
+        </div>
+      </section>
+
+      <section>
+        <h2>Achievements</h2>
+        <ul>
+          <li>Solved 450+ DSA problems on LeetCode (username: sunkissed_daring); achieved contest rating 1561 and earned the 200 Days Badge 2026.</li>
+          <li>Qualified for Flipkart GRID 8.0 — Software Development Track, Round 2, a national-level software engineering challenge.</li>
+          <li>Selected for Infosys Springboard Pragati: Path to Future — Cohort 9, focused on AI, cloud, and professional development.</li>
+          <li>Built an Audio Call Analyzer for real-time fraud call detection using Python, ML, NLP, and FastAPI at HCL GUVI India AI Impact Buildathon 2026.</li>
+          <li>Ranked 17th college-wide on GeeksforGeeks, demonstrating consistent competitive programming performance.</li>
+          <li>Achieved 100/100 in Mathematics (ICSE 2022) and Chemistry (ISC 2024); recognized among the top 0.1% nationwide achievers in Chemistry.</li>
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>
