@@ -8,10 +8,8 @@ import {
   FolderGit2,
   ExternalLink,
   CheckCircle2,
-  HelpCircle,
   Cpu,
   Layers,
-  Sparkles,
   GitBranch,
 } from "lucide-react";
 
@@ -216,14 +214,6 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({
         </div>
 
         <div className="flex flex-wrap items-center gap-2">
-          <button
-            onClick={() => onRunCommand?.(`ask "Tell me about ${project.name}"`)}
-            className="px-3 py-1.5 rounded-lg bg-[#1E2127] text-[#B4A0F7] hover:bg-[#B4A0F7]/15 border border-[#B4A0F7]/40 transition-colors flex items-center gap-1.5 font-mono text-xs"
-          >
-            <Sparkles className="w-3.5 h-3.5" />
-            <span>Ask Assistant</span>
-          </button>
-
           <button
             onClick={onBack}
             className="px-3 py-1.5 rounded-lg bg-[#1E2127] text-[#A0A7B2] hover:text-[#E6E8EB] border border-[#30343C] transition-colors"

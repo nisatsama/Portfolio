@@ -175,13 +175,6 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
           </button>
           ) or append <span className="text-[#7AA2F7]">--architecture</span>
         </span>
-
-        <button
-          onClick={() => onRunCommand?.("help")}
-          className="text-[#A0A7B2] hover:text-[#7EE787] underline"
-        >
-          type 'help'
-        </button>
       </div>
     </div>
   );

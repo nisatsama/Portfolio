@@ -121,7 +121,7 @@ export const TerminalInput: React.FC<TerminalInputProps> = ({
           autoComplete="off"
           autoCorrect="off"
           spellCheck="false"
-          placeholder={isBusy ? "Processing..." : "Type a command or 'help'..."}
+          placeholder={isBusy ? "Processing..." : "Type a command..."}
           className="w-full bg-transparent text-[#E6E8EB] outline-none border-none placeholder-[#747C87]/60 caret-transparent font-mono text-xs sm:text-sm"
         />
 

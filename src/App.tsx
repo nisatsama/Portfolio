@@ -3,7 +3,7 @@ import { TopNav } from "./components/TopNav";
 import { TerminalWindow, TerminalWindowRef } from "./components/TerminalWindow";
 import { TerminalFooter } from "./components/TerminalFooter";
 import { profile } from "./data/profile";
-import { Cpu, Database, Network, ShieldCheck, Terminal as TermIcon, Sparkles } from "lucide-react";
+import { Cpu, Database, Network, ShieldCheck } from "lucide-react";
 
 export function App() {
   const terminalRef = useRef<TerminalWindowRef>(null);
@@ -23,10 +23,6 @@ export function App() {
         <section className="w-full max-w-5xl text-center sm:text-left mb-6 sm:mb-8 space-y-2">
           <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-[#30343C]/80">
             <div>
-              <div className="flex items-center justify-center sm:justify-start gap-2 text-xs font-mono text-[#7EE787]">
-                <TermIcon className="w-3.5 h-3.5" />
-                <span>INTERACTIVE DEVELOPER WORKSTATION</span>
-              </div>
               <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-[#E6E8EB] mt-1">
                 {profile.name} — Engineering Console
               </h1>
@@ -42,28 +38,6 @@ export function App() {
               <span className="px-2.5 py-1 rounded-md bg-[#17191D] border border-[#30343C] hidden md:inline">
                 Apache Kafka
               </span>
-            </div>
-          </div>
-
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs font-mono text-[#747C87]">
-            <p className="max-w-2xl text-[#A0A7B2]">
-              Full Unix command shell navigation. Execute commands, explore verified backend repositories, or query the assistant.
-            </p>
-            <div className="flex items-center gap-3 shrink-0">
-              <button
-                onClick={() => handleNavClick("help")}
-                className="text-[#7EE787] hover:underline"
-              >
-                type 'help' for manual
-              </button>
-              <span>·</span>
-              <button
-                onClick={() => handleNavClick('ask "Tell me about HookForge"')}
-                className="text-[#B4A0F7] hover:underline flex items-center gap-1"
-              >
-                <Sparkles className="w-3 h-3" />
-                <span>ask assistant</span>
-              </button>
             </div>
           </div>
         </section>

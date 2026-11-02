@@ -1,5 +1,5 @@
 import React from "react";
-import { Sparkles, Terminal } from "lucide-react";
+import { Terminal } from "lucide-react";
 
 interface CommandSuggestionsProps {
   onRunCommand: (command: string) => void;
@@ -21,8 +21,6 @@ export const CommandSuggestions: React.FC<CommandSuggestionsProps> = ({
     { label: "achievements", cmd: "achievements", desc: "Flipkart/SIH" },
     { label: "contact", cmd: "contact", desc: "Reach out" },
     { label: "neofetch", cmd: "neofetch", desc: "System info" },
-    { label: "ask assistant", cmd: "ask \"Tell me about HookForge\"", desc: "Gemini", isAi: true },
-    { label: "help", cmd: "help", desc: "All cmds" },
   ];
 
   return (
@@ -40,14 +38,9 @@ export const CommandSuggestions: React.FC<CommandSuggestionsProps> = ({
           <button
             key={item.label}
             onClick={() => onRunCommand(item.cmd)}
-            className={`font-mono text-xs px-2.5 py-1 rounded-md transition-all flex items-center gap-1.5 shrink-0 ${
-              item.isAi
-                ? "bg-[#1E2127] text-[#B4A0F7] border border-[#B4A0F7]/40 hover:bg-[#B4A0F7]/15 hover:border-[#B4A0F7]"
-                : "bg-[#17191D] text-[#A0A7B2] border border-[#30343C] hover:text-[#7EE787] hover:border-[#7EE787]/50 hover:bg-[#1E2127]"
-            }`}
+            className="font-mono text-xs px-2.5 py-1 rounded-md transition-all flex items-center gap-1.5 shrink-0 bg-[#17191D] text-[#A0A7B2] border border-[#30343C] hover:text-[#7EE787] hover:border-[#7EE787]/50 hover:bg-[#1E2127]"
             title={`Run command: ${item.cmd}`}
           >
-            {item.isAi && <Sparkles className="w-3 h-3 text-[#B4A0F7]" />}
             <span>{item.label}</span>
           </button>
         ))}
