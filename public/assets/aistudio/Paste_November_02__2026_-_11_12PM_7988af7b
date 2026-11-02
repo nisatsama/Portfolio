@@ -1,0 +1,1511 @@
+# MASTER PROMPT — BUILD MY PERSONAL ENGINEERING PORTFOLIO
+## Google AI Studio · Gemini · Mac Terminal-Inspired Interactive Portfolio
+
+Act as a senior product designer, creative frontend engineer, UX architect, and full-stack software developer.
+
+Your task is to design and implement a complete, polished, production-quality personal developer portfolio for **Nisat Sama**, a Computer Science undergraduate specializing in Java backend engineering and full-stack software development.
+
+This is not a generic developer portfolio.
+
+I want an immersive, interactive portfolio whose primary interface is inspired by the macOS Terminal / Unix command-line environment. It should look sophisticated, minimal, technically credible, and visually memorable.
+
+The terminal is the main navigation and interaction experience, not merely a decorative element.
+
+Build the actual working application. Do not return only a design concept, wireframe, implementation plan, or static mockup.
+
+---
+
+# 1. PRIMARY OBJECTIVE
+
+Create a portfolio that positions me as:
+
+**Java Backend Engineer | Software Developer | Full-Stack Engineer**
+
+My primary professional identity is Java backend engineering, with practical experience in Spring Boot, REST API development, databases, authentication, real-time systems, event-driven architecture, and full-stack application development.
+
+The portfolio must communicate that I can:
+- Design and develop backend applications.
+- Build secure REST APIs and application workflows.
+- Work with relational and NoSQL databases.
+- Implement authentication and authorization.
+- Understand transactions, concurrency, and asynchronous processing.
+- Build event-driven and distributed application components.
+- Develop complete full-stack products.
+- Work with Docker, cloud platforms, and modern development tools.
+
+The website should appeal to:
+- Technical recruiters.
+- Engineering hiring managers.
+- Backend engineering teams.
+- Software engineering internship recruiters.
+- Product-based companies.
+- Developers interested in my projects and engineering work.
+
+The first impression should be that of a developer who builds real software systems, not someone who simply collects technology names.
+
+# 2. DESIGN REFERENCE AND CREATIVE DIRECTION
+
+Reference application:
+https://aistudio.google.com/apps/bb758b39-ac67-4178-8dc8-da2fe4461697?showPreview=true&showAssistant=truetale
+
+Use the existing portfolio's visual direction as inspiration wherever its preview is accessible. Preserve useful ideas from it, but improve the layout, responsiveness, interactions, visual consistency, and engineering presentation.
+
+The new portfolio should have a strong macOS Terminal aesthetic.
+
+## Visual identity
+
+Think:
+- macOS Terminal.
+- Unix shell environments.
+- Sophisticated developer workstations.
+- Modern command-line interfaces.
+- Clean software engineering dashboards.
+- Minimalist dark interfaces.
+
+Do NOT make it look like a generic hacker website.
+
+Avoid:
+- Matrix rain effects.
+- Excessive neon green.
+- Cyberpunk backgrounds.
+- Glowing borders everywhere.
+- Excessive gradients.
+- Random floating 3D objects.
+- Unnecessary particle effects.
+- Stock photographs.
+- Profile photographs.
+- Cartoon illustrations.
+- Generic AI-generated hero illustrations.
+- Excessive glassmorphism.
+
+The aesthetic should be elegant, restrained, and professional.
+
+## Color palette
+
+Use a carefully balanced dark macOS-inspired palette.
+
+Suggested design tokens:
+
+- Main background: #101114
+- Terminal background: #17191D
+- Secondary surface: #1E2127
+- Elevated surface: #242831
+- Primary text: #E6E8EB
+- Secondary text: #A0A7B2
+- Muted text: #747C87
+- Terminal green: #7EE787
+- Secondary blue: #7AA2F7
+- Accent purple: #B4A0F7
+- Warning yellow: #E5C07B
+- Error red: #FF7B72
+- Borders: #30343C
+
+Use terminal green primarily for prompts, successful commands, active states, and important highlights.
+
+Do not use all colors simultaneously. Maintain a consistent hierarchy.
+
+## Typography
+
+Use:
+- JetBrains Mono or SF Mono for terminal content.
+- Inter or SF Pro Display for selected editorial headings.
+- Monospace typography for command prompts, file names, metadata, and technical labels.
+
+Use consistent font weights and readable line heights.
+
+# 3. THE MAIN TERMINAL INTERFACE
+
+This is the central feature.
+
+Build a realistic, responsive terminal window inspired by macOS Terminal.
+
+## Terminal window
+
+Include:
+- Rounded window corners.
+- macOS red, yellow, and green window controls.
+- A subtle title bar.
+- A terminal-style prompt.
+- A blinking cursor.
+- Command input.
+- Scrollable command history.
+- A responsive terminal body.
+- Subtle borders and shadows.
+
+Example terminal title:
+
+nisat@macbook-pro — zsh — portfolio
+
+The terminal should occupy the main visual focus of the landing page.
+
+It should feel like an actual interactive developer environment.
+
+## Initial terminal experience
+
+When someone visits the website, do not reveal every section simultaneously.
+
+Create a controlled initialization sequence.
+
+Sequence:
+
+1. The terminal window fades into view.
+2. The macOS window controls appear.
+3. A small initialization message is displayed.
+4. Show a short system initialization sequence.
+5. Display a terminal prompt.
+6. Automatically execute `whoami`.
+7. Reveal my name and professional identity.
+8. Type my short introduction.
+9. Reveal suggested commands.
+10. Display the command input with a blinking cursor.
+
+Example:
+
+```bash
+Last login: Today on ttys001
+
+Initializing nisat.dev environment...
+Loading profile...
+Loading engineering projects...
+Environment ready.
+
+nisat@macbook-pro ~ % whoami
+Nisat Sama
+
+Java Backend Engineer | Software Developer
+
+Building reliable backend systems,
+distributed applications, and useful software products.
+
+nisat@macbook-pro ~ %
+```
+
+Do not type every character too slowly.
+
+Use natural typing speeds, short pauses, and subtle transitions.
+
+Allow the user to skip the introduction animation or interact with the terminal immediately.
+
+Store the initialization state only for the current browser session if necessary. Do not create unnecessary persistent tracking.
+
+# 4. FUNCTIONAL COMMAND-LINE NAVIGATION
+
+The terminal must support real interactive commands.
+
+Implement command parsing and section rendering using a clean, maintainable command registry.
+
+## Required commands
+
+| Command | Function |
+|---|---|
+| `help` | Display available commands |
+| `whoami` | Display my professional introduction |
+| `about` | Display my background |
+| `skills` | Display my technical capabilities |
+| `projects` | Display all featured projects |
+| `projects --featured` | Display primary backend projects |
+| `projects --fullstack` | Display full-stack projects |
+| `experience` | Display internship experience |
+| `education` | Display academic background |
+| `opensource` | Display open-source contribution |
+| `achievements` | Display selected engineering achievements |
+| `certifications` | Display professional certifications |
+| `contact` | Display contact information |
+| `socials` | Display GitHub and LinkedIn |
+| `resume` | Explain that a resume download is available only when an actual resume file is configured |
+| `neofetch` | Display a customized developer system summary |
+| `pwd` | Display the portfolio root |
+| `ls` | Display the available portfolio directories |
+| `tree` | Display the portfolio directory structure |
+| `date` | Display the current date |
+| `clear` | Clear terminal output |
+| `history` | Display previous commands |
+| `exit` | Display a short closing message |
+
+The `resume` command must not link to a fabricated file. If no resume PDF is configured, show a sensible message instead.
+
+## Example command output
+
+### `help`
+
+```bash
+Available commands:
+
+  whoami          Identity and introduction
+  about           About me
+  skills          Technical capabilities
+  projects        Explore my projects
+  experience      Professional experience
+  education       Academic background
+  opensource      Open-source contributions
+  achievements    Engineering achievements
+  certifications Professional certifications
+  contact         Get in touch
+  socials         External profiles
+  neofetch        Developer system information
+  clear           Clear terminal
+```
+
+### `ls`
+
+```bash
+nisat@macbook-pro ~ % ls
+
+about/
+projects/
+experience/
+education/
+opensource/
+achievements/
+certifications/
+contact/
+```
+
+### `tree`
+
+```bash
+.
+├── about
+├── education
+├── experience
+├── projects
+│   ├── HookForge
+│   ├── ShelfSense
+│   ├── SupportFlow
+│   ├── CodeCollab
+│   └── Travelogia
+├── opensource
+├── achievements
+├── certifications
+└── contact
+```
+
+### `neofetch`
+
+Create a beautiful custom developer profile output containing:
+
+- Name.
+- Location.
+- Current academic program.
+- Primary engineering specialization.
+- Main programming language.
+- Backend framework.
+- Database technologies.
+- Cloud and development tools.
+- GitHub profile.
+
+Do not display DSA statistics, competitive programming ratings, or competitive programming platform links.
+
+## Command-line interaction requirements
+
+Implement:
+- Enter to execute commands.
+- Up arrow for previous command.
+- Down arrow for next command.
+- Tab completion where possible.
+- Command suggestions.
+- Command history.
+- Input validation.
+- Helpful invalid-command messages.
+- Case-insensitive command matching.
+- Auto-scroll to the latest terminal output.
+- Clickable links within terminal responses.
+- Keyboard accessibility.
+
+When the user enters an unknown command:
+
+```bash
+zsh: command not found: something
+
+Type 'help' to see available commands.
+```
+
+Suggested commands should be displayed as subtle clickable elements beneath the terminal prompt.
+
+Make the terminal usable on mobile devices. Do not force users to type commands if a touch-friendly alternative is more convenient.
+
+# 5. PERSONAL INFORMATION AND CONTENT
+
+Use the following information as the authoritative source of truth.
+
+Do not invent additional personal details, dates, employment history, statistics, or accomplishments.
+
+## Identity
+
+Name: Nisat Sama
+
+Location: Kolkata, India
+
+Current education: B.Tech in Computer Science & Engineering.
+
+University: Adamas University, Kolkata.
+
+Professional focus:
+- Java Backend Engineering.
+- Spring Boot.
+- Full-Stack Development.
+- Backend Architecture.
+- Distributed and Event-Driven Systems.
+- Software Engineering.
+
+Professional introduction:
+
+"I am a Computer Science undergraduate focused on Java backend engineering and full-stack software development. I enjoy designing reliable backend systems, developing practical software products, and exploring the engineering principles behind scalable applications."
+
+Keep the introduction concise.
+
+Do not add generic phrases such as:
+- Passionate coder.
+- Hardworking individual.
+- Tech enthusiast.
+- Quick learner.
+- Future billionaire.
+- Aspiring genius.
+
+# 6. ABOUT SECTION
+
+Command: `about`
+
+Create a visually clean profile section.
+
+Include:
+
+- My name.
+- Kolkata, India.
+- Adamas University.
+- B.Tech Computer Science & Engineering.
+- Expected graduation: May 2028.
+- Primary focus: Java Backend Engineering.
+- Secondary focus: Full-Stack Development.
+
+Write a short professional description.
+
+Emphasize:
+- Backend development.
+- Building practical software products.
+- API design.
+- Databases.
+- Authentication.
+- Reliability.
+- Distributed systems.
+- Full-stack engineering.
+
+Do not turn this section into a long autobiography.
+
+Do not add a photograph or avatar.
+
+Use terminal-style information blocks, concise paragraphs, and subtle metadata labels.
+
+# 7. TECHNICAL CAPABILITIES
+
+Command: `skills`
+
+Display technical capabilities in organized categories.
+
+Do not use percentage-based skill bars, circular meters, or fabricated proficiency levels.
+
+Use clean terminal-inspired groupings.
+
+## Programming languages
+
+- Java
+- JavaScript
+- SQL
+- C
+
+## Backend engineering
+
+- Spring Boot
+- Spring Security
+- Spring Data JPA
+- REST APIs
+- JWT
+- OAuth 2.0
+- Microservices
+- Node.js
+- Express.js
+
+## Databases and messaging
+
+- PostgreSQL
+- MySQL
+- MongoDB
+- Redis
+- Apache Kafka
+
+## Cloud, DevOps and tools
+
+- Docker
+- AWS
+- Google Cloud Run
+- Git
+- GitHub
+- Postman
+- Prometheus
+- Micrometer
+
+## Frontend
+
+- React.js
+- HTML5
+- CSS3
+- Tailwind CSS
+
+## Computer science fundamentals
+
+- Object-Oriented Programming
+- Data Structures and Algorithms
+- Database Management Systems
+- Operating Systems
+- Computer Networks
+
+Presentation requirements:
+
+1. Keep Java and backend engineering visually prominent.
+2. Group related technologies logically.
+3. Do not assign arbitrary experience levels.
+4. Do not display technology proficiency percentages.
+5. Do not make the section look like a resume keyword dump.
+6. Use compact technology labels or terminal-style output.
+
+# 8. PROJECTS SECTION
+
+Command: `projects`
+
+This is one of the most important sections.
+
+The portfolio must prioritize the quality and engineering depth of my projects.
+
+Use two levels of presentation:
+
+**Primary engineering projects**
+1. HookForge.
+2. ShelfSense.
+3. SupportFlow SLA.
+
+**Selected full-stack projects**
+4. CodeCollab.
+5. Travelogia.
+
+Do not give every project equal visual weight.
+
+The first three should receive the strongest presentation.
+
+Each project should have:
+- Project name.
+- Short description.
+- Problem it solves.
+- Technical stack.
+- Main implemented features.
+- Engineering highlights.
+- GitHub repository link.
+- Live demo link only if a genuine, verified URL is available.
+
+Use expandable technical details or project-specific terminal commands rather than displaying excessively long descriptions.
+
+## Project 1: HookForge
+
+Name: HookForge
+
+Title: Distributed Webhook Delivery Infrastructure
+
+GitHub:
+https://github.com/nisatsama/HookForge
+
+Primary technology stack:
+- Java 21.
+- Spring Boot.
+- PostgreSQL.
+- Apache Kafka.
+- Redis.
+- Docker.
+- JUnit.
+- Mockito.
+
+Project context:
+
+HookForge is a multi-tenant webhook delivery platform designed to route events to registered endpoints and handle asynchronous webhook delivery reliably.
+
+Engineering capabilities to investigate in the repository:
+
+- Transactional Outbox pattern.
+- Kafka-based asynchronous processing.
+- Concurrent delivery claiming.
+- Delivery state tracking.
+- Retry and recovery mechanisms.
+- Dead-letter and replay workflows where implemented.
+- Tenant-scoped authentication.
+- HMAC-SHA256 payload signing.
+- Idempotency.
+- PostgreSQL persistence.
+- Secure endpoint management.
+
+The architecture and source code must be inspected before describing individual capabilities.
+
+Do not present planned functionality as implemented functionality.
+
+Suggested short description:
+
+"A multi-tenant webhook delivery platform built with Java and Spring Boot, focusing on reliable event routing, asynchronous processing, delivery tracking, and failure recovery."
+
+Create an expandable section titled:
+
+`engineering-notes`
+
+When opened, show relevant architecture information, implementation details, and engineering decisions supported by the actual source code.
+
+## Project 2: ShelfSense
+
+Name: ShelfSense
+
+Title: Event-Driven Retail Inventory Intelligence & Replenishment Platform
+
+GitHub:
+https://github.com/nisatsama/ShelfSense
+
+Technology stack supplied:
+
+- Java 21.
+- Spring Boot.
+- PostgreSQL.
+- Apache Kafka.
+- Redis.
+- Docker.
+- AWS.
+
+Project context:
+
+ShelfSense focuses on retail inventory intelligence and replenishment workflows.
+
+The intended business problem is stockout prevention across warehouses, distribution centers, stores, and customers.
+
+Features described in the supplied project information:
+
+- SKU-level stockout prediction.
+- Demand forecasting.
+- Explainable replenishment recommendations.
+- Supplier lead-time considerations.
+- Safety-stock policies.
+- Transactional inventory reservation.
+- PostgreSQL constraints.
+- Concurrency control.
+- Idempotency.
+- Kafka-based event processing.
+- Transactional Outbox pattern.
+- Redis caching.
+
+Important:
+
+The repository README currently contains very limited information.
+
+Inspect the actual implementation and identify which features genuinely exist before showing them.
+
+Do not fabricate:
+- Prediction accuracy.
+- Stockout reduction percentages.
+- Throughput.
+- Number of users.
+- Performance metrics.
+- Production deployment claims.
+
+If some features are not implemented, describe the actual system without mentioning those planned features.
+
+Suggested short description:
+
+"An event-driven retail inventory platform designed to support inventory visibility, stockout intelligence, and replenishment decision-making."
+
+## Project 3: SupportFlow SLA
+
+Name: SupportFlow SLA
+
+Title: Helpdesk Ticket Management & SLA Management Platform
+
+GitHub:
+https://github.com/nisatsama/SupportFlow-SLA-Driven-Customer-Support-Platform
+
+Technology stack:
+
+- Java.
+- Spring Boot.
+- Spring Security.
+- React.
+- PostgreSQL.
+- JWT.
+- Cloudinary, where confirmed by the current implementation.
+
+Project context:
+
+A full-stack customer support platform designed around ticket management and customer-support workflows.
+
+Inspect the current backend and frontend source code.
+
+Investigate:
+- User authentication.
+- JWT authentication.
+- User and administrator roles.
+- Ticket creation and management.
+- Ticket assignment.
+- Ticket status and priority.
+- User-specific ticket access.
+- Ticket conversations and messages.
+- Image attachments.
+- Admin functionality.
+- SLA-related functionality only where genuinely implemented.
+
+The repository name contains SLA, but do not claim automated SLA timers, escalation workflows, breach detection, or automated notifications unless the source code demonstrates them.
+
+Suggested short description:
+
+"A full-stack helpdesk platform built with Spring Boot and React, supporting role-based ticket workflows, authentication, and customer-support communication."
+
+## Project 4: CodeCollab
+
+Name: CodeCollab
+
+Title: Real-Time Collaborative Coding Platform
+
+GitHub:
+https://github.com/nisatsama/CodeCollab
+
+Documented technology stack:
+
+- React.js.
+- Node.js.
+- Express.js.
+- Socket.IO.
+- WebSockets.
+- Docker.
+- Monaco Editor.
+
+Project context:
+
+A collaborative coding environment where multiple developers can join shared rooms, edit code, communicate, and execute programs.
+
+Documented features include:
+
+- Real-time collaborative code editing.
+- Room-based collaboration.
+- WebSocket synchronization.
+- Persistent in-memory session state for active rooms.
+- Real-time group chat.
+- Synchronization for newly joined participants.
+- Multi-language code execution.
+- Docker-based execution isolation.
+- Support for JavaScript, Java, Python, and C++.
+
+Inspect the source code and distinguish existing features from future enhancements.
+
+Do not claim database-backed persistence or distributed horizontal scaling unless actually implemented.
+
+Suggested short description:
+
+"A real-time collaborative coding platform featuring shared editor sessions, WebSocket communication, group chat, and containerized multi-language code execution."
+
+## Project 5: Travelogia
+
+Name: Travelogia
+
+Title: Full-Stack Travel Booking Platform
+
+GitHub:
+https://github.com/nisatsama/Travelogia
+
+Documented technology stack:
+
+- React.js.
+- Node.js.
+- Express.js.
+- MongoDB.
+- Mongoose.
+- JWT.
+- bcrypt.js.
+- Vercel.
+- Render.
+
+Documented features:
+
+- User registration and login.
+- JWT authentication.
+- Protected routes.
+- Destination browsing.
+- Destination search.
+- Destination details.
+- Booking management.
+- Booking history.
+- Favorites.
+- Personalized user dashboard.
+- Responsive UI.
+- User account management.
+
+Inspect the current repository before presenting the final project description.
+
+Suggested short description:
+
+"A full-stack travel discovery and booking application with secure authentication, destination exploration, personalized favorites, and booking management."
+
+# 9. OPTIONAL ADDITIONAL PROJECTS
+
+These projects should not automatically be placed in the primary showcase.
+
+Inspect them and include them only if their actual implementation and presentation quality justify their presence.
+
+## AI Resume Analyzer
+
+Repository:
+https://github.com/nisatsama/AIResumeAnalyser
+
+Documented technologies:
+- React.
+- Node.js.
+- Express.js.
+- MongoDB.
+- JWT.
+- Gemini API.
+- PDF processing.
+- Vercel.
+- Render.
+
+Documented features:
+- Resume upload.
+- PDF text extraction.
+- Skill extraction.
+- Resume analysis.
+- Strength and weakness identification.
+- ATS-oriented recommendations.
+- Analysis dashboard.
+- JWT authentication.
+
+Live URLs documented in the repository:
+- Frontend: https://ai-resume-analyser-brown.vercel.app/
+- Backend: https://airesumeanalyser-gu5k.onrender.com/
+
+Validate these URLs before displaying them.
+
+If included, place it under an optional secondary projects area. Do not let it dominate my Java backend positioning.
+
+## Personalized Fashion Recommendation System
+
+Repository supplied:
+https://github.com/nisatsama/personalized-fashion-recommendation-system
+
+The supplied repository URL was not accessible during initial inspection.
+
+Do not invent its functionality.
+
+Only include it after successful repository inspection.
+
+## RecoverAI
+
+The supplied link:
+https://github.com/recoverai
+
+This is an organization/profile URL rather than a confirmed project repository URL.
+
+Do not guess the repository name or create a fabricated project entry.
+
+Only include it after receiving and inspecting the exact repository URL.
+
+# 10. PROJECT PRESENTATION AND INTERACTIONS
+
+Do not create ordinary generic cards with oversized images.
+
+The portfolio should retain its terminal identity.
+
+Use a combination of:
+
+- Terminal directory listings.
+- Project file explorers.
+- Compact project panels.
+- Expandable technical notes.
+- Syntax-highlighted architecture snippets.
+- Technology metadata.
+- GitHub links.
+- Optional verified live demos.
+
+Example:
+
+```bash
+nisat@macbook-pro ~/projects % ls -la
+
+drwxr-xr-x  HookForge
+drwxr-xr-x  ShelfSense
+drwxr-xr-x  SupportFlow
+drwxr-xr-x  CodeCollab
+drwxr-xr-x  Travelogia
+```
+
+When a user selects HookForge, show a detailed project view with its description, verified technical features, technology stack, and repository link.
+
+Support interactions such as:
+
+```bash
+open HookForge
+open ShelfSense
+open SupportFlow
+open CodeCollab
+open Travelogia
+```
+
+These commands should genuinely navigate to the corresponding project details.
+
+External GitHub links must open correctly in a new tab.
+
+Use clean and consistent transitions.
+
+# 11. PROFESSIONAL EXPERIENCE
+
+Command: `experience`
+
+Display:
+
+**AI Web Development Intern — InAmigos Foundation**
+
+Remote
+
+June 2026 – July 2026
+
+Responsibilities and accomplishments:
+
+- Built responsive web interfaces and reusable UI components for an NGO and EdTech platform based on functional requirements.
+- Improved navigation and visual consistency through UI/UX analysis.
+- Designed an NGO website prototype in Figma and delivered an improvement report.
+
+Present this as professional experience.
+
+Use a compact terminal-style experience timeline.
+
+Do not invent:
+- Company performance metrics.
+- User counts.
+- Revenue improvements.
+- Unspecified responsibilities.
+- Technologies not supplied.
+
+# 12. EDUCATION
+
+Command: `education`
+
+Display:
+
+**Adamas University, Kolkata**
+
+B.Tech — Computer Science & Engineering
+
+July 2024 – May 2028
+
+CGPA: 8.77/10
+
+**Auxilium Convent School, Barasat**
+
+ISC — Class XII
+
+March 2024
+
+Percentage: 95.75%
+
+Chemistry: 100/100
+
+**Auxilium Convent School, Barasat**
+
+ICSE — Class X
+
+May 2022
+
+Percentage: 97%
+
+Mathematics: 100/100
+
+Use a compact academic timeline.
+
+Keep the presentation professional and avoid oversized academic badges.
+
+# 13. OPEN-SOURCE CONTRIBUTIONS
+
+Command: `opensource`
+
+Display:
+
+**Pugdom v2**
+
+Technology:
+- TypeScript.
+- React Native.
+
+Contribution:
+Merged Pull Request #65
+
+Pull request:
+https://github.com/cajuuh/pugdomv2/pull/65
+
+Contribution details:
+
+- Refactored Login, Thread, and Search screens using shared theme tokens and reusable UI primitives.
+- Improved consistency and maintainability.
+- Updated and validated the test suite.
+- Verified 21 test suites comprising 223 tests.
+
+Present this as a genuine external open-source contribution.
+
+Provide a clickable pull request link.
+
+Do not mix this contribution into the personal projects section.
+
+# 14. ENGINEERING ACHIEVEMENTS
+
+Command: `achievements`
+
+Display the following achievements without turning this section into a competitive programming statistics page.
+
+**Flipkart GRiD 8.0**
+- Qualified for Round 3 in the Software Development Track.
+
+**Smart India Hackathon 2026**
+- Selected in the internal hackathon round.
+- Submitted the solution through the official SIH portal.
+
+**HCL GUVI AI Impact Buildathon 2026**
+- Built a real-time fraud call detector using Python, FastAPI, and ML/NLP.
+
+**Coding Ninjas × Google Vibe2Ship Hackathon**
+- Deployed a MERN application incorporating Gemini workflows on Google Cloud Run.
+
+Important exclusions:
+
+Do NOT display:
+- LeetCode profile.
+- GeeksforGeeks profile.
+- HackerRank profile link.
+- Competitive programming platform links.
+- Number of DSA problems solved.
+- Contest ratings.
+- Competitive programming ranks.
+- DSA badges.
+- Coding platform statistics.
+
+Do not mention these metrics anywhere in the portfolio, including terminal output, neofetch, footer, or metadata.
+
+This exclusion is intentional.
+
+# 15. CERTIFICATIONS
+
+Command: `certifications`
+
+Display:
+
+1. AWS Cloud Practitioner Essentials — May 2026.
+2. Azure Fundamentals, Infosys Springboard — July 2026.
+3. Spring Framework Overview, Infosys Springboard — July 2026.
+4. HackerRank Software Engineer Intern — July 2026.
+
+Use a simple, compact list.
+
+Only link certificates when an actual certificate URL is provided.
+
+Do not create fabricated credential links.
+
+# 16. CONTACT AND SOCIAL LINKS
+
+Command: `contact`
+
+Command: `socials`
+
+Use the following exact information.
+
+Name: Nisat Sama
+
+Location: Kolkata, India
+
+Phone:
++91 7439730487
+
+Email:
+nisatsama7547@gmail.com
+
+LinkedIn:
+https://www.linkedin.com/in/nisat-sama/
+
+GitHub:
+https://github.com/nisatsama
+
+Portfolio domain:
+https://nisatsama.dev
+
+Display GitHub and LinkedIn prominently.
+
+Provide:
+- Clickable email.
+- Clickable phone number.
+- Clickable LinkedIn.
+- Clickable GitHub.
+
+Use `mailto:` and `tel:` links where appropriate.
+
+Do not display LeetCode, GFG, or HackerRank profile links.
+
+Do not add social media accounts that have not been provided.
+
+# 17. FOOTER
+
+Create a minimal terminal-inspired footer.
+
+Example:
+
+```bash
+nisat@macbook-pro ~ % echo "Thanks for exploring my work."
+
+Built with curiosity and code.
+© 2026 Nisat Sama
+
+Connection: Open for software engineering opportunities.
+```
+
+The footer should include small GitHub, LinkedIn, and email links.
+
+Avoid a large traditional website footer.
+
+# 18. ANIMATION AND TRANSITION SYSTEM
+
+The experience should feel carefully orchestrated.
+
+Do not display every section at the same time.
+
+## Initial page animation
+
+Use this approximate sequence:
+
+| Event | Delay |
+|---|---:|
+| Background and terminal frame | 0 ms |
+| Window controls | 150 ms |
+| Terminal initialization | 350 ms |
+| Initial command | 650 ms |
+| Name reveal | 1,000 ms |
+| Professional title | 1,350 ms |
+| Introduction | 1,650 ms |
+| Suggested commands | 2,100 ms |
+
+Adjust timings for a natural experience.
+
+## Section transitions
+
+When a command is executed:
+- Preserve terminal history.
+- Display the entered command.
+- Reveal the corresponding content.
+- Use subtle opacity and translate transitions.
+- Animate related elements with small staggered delays.
+- Avoid abrupt page replacements.
+- Avoid excessive animation.
+
+Use:
+- Fade-in.
+- Subtle upward movement.
+- Short staggered reveals.
+- Typing animations only for short terminal messages.
+- Smooth scrolling.
+- Subtle hover transitions.
+
+Animation should improve the experience, not slow down navigation.
+
+## Performance
+
+- Avoid large animation libraries if CSS is sufficient.
+- Lazy-load non-critical components.
+- Avoid unnecessary re-renders.
+- Respect `prefers-reduced-motion`.
+- Do not block user input while animations are running.
+- Ensure animations work smoothly on lower-powered devices.
+
+# 19. GOOGLE AI STUDIO AND GEMINI FEATURES
+
+Use Google AI Studio's capabilities selectively.
+
+Do not integrate features merely because they are available.
+
+The portfolio should remain primarily a frontend engineering showcase.
+
+## Recommended: Gemini-powered portfolio assistant
+
+Optionally implement a small feature called:
+
+`ask nisat`
+
+It should allow a recruiter to ask questions about:
+- My engineering background.
+- My Java backend experience.
+- My projects.
+- My technical stack.
+- My open-source contribution.
+- My professional experience.
+
+Example:
+
+```bash
+nisat@macbook-pro ~ % ask "Tell me about HookForge"
+```
+
+The assistant should provide concise answers grounded in the portfolio's verified content.
+
+Implementation requirements:
+
+1. Use the Gemini API only if it adds genuine value.
+2. Use the currently recommended Gemini model available in Google AI Studio.
+3. Use streaming responses where supported.
+4. Maintain a restricted context containing only verified portfolio information.
+5. Never fabricate project capabilities.
+6. Never expose API keys in frontend source code.
+7. Use secure server-side handling for API credentials.
+8. Provide graceful fallback behavior if the API is unavailable.
+9. Do not allow the assistant to execute arbitrary shell commands.
+10. Keep this feature optional and non-intrusive.
+
+Do not make the portfolio dependent on Gemini availability.
+
+## Features not required
+
+Do not add:
+- Google Maps.
+- Google Calendar.
+- Gmail integration.
+- Google Drive integration.
+- Voice conversations.
+- Music generation.
+- Video generation.
+- 3D scenes.
+- XR features.
+- Authentication.
+- User databases.
+- Unnecessary cloud integrations.
+
+This is a personal portfolio. It does not need user accounts, an admin dashboard, or a database just to display static portfolio information.
+
+Use the simplest reliable architecture.
+
+# 20. TECHNICAL IMPLEMENTATION
+
+Build a real, maintainable frontend application.
+
+Preferred implementation:
+
+- React.
+- TypeScript.
+- Vite.
+- Tailwind CSS.
+- Lucide icons, used sparingly.
+- CSS animations or a lightweight animation library.
+
+You may choose an alternative if the Google AI Studio environment requires it, but maintain the design and functionality.
+
+## Architecture requirements
+
+Separate the application into logical components.
+
+Suggested structure:
+
+```text
+src/
+├── components/
+│   ├── TerminalWindow.tsx
+│   ├── TerminalHeader.tsx
+│   ├── TerminalInput.tsx
+│   ├── TerminalOutput.tsx
+│   ├── CommandSuggestions.tsx
+│   ├── ProjectExplorer.tsx
+│   ├── ProjectDetails.tsx
+│   ├── AboutSection.tsx
+│   ├── SkillsSection.tsx
+│   ├── ExperienceSection.tsx
+│   ├── EducationSection.tsx
+│   ├── OpenSourceSection.tsx
+│   ├── AchievementsSection.tsx
+│   ├── CertificationsSection.tsx
+│   └── ContactSection.tsx
+│
+├── data/
+│   ├── profile.ts
+│   ├── projects.ts
+│   ├── skills.ts
+│   ├── experience.ts
+│   ├── education.ts
+│   ├── achievements.ts
+│   └── certifications.ts
+│
+├── hooks/
+│   ├── useTerminal.ts
+│   ├── useCommandHistory.ts
+│   └── useTypingEffect.ts
+│
+├── utils/
+│   ├── commandParser.ts
+│   └── commandRegistry.ts
+│
+├── styles/
+│   └── globals.css
+│
+├── App.tsx
+└── main.tsx
+```
+
+This is a suggested structure, not a requirement to create empty files. Implement components only where useful.
+
+Keep portfolio content separate from rendering logic.
+
+Do not put the entire application into one giant component.
+
+# 21. RESPONSIVE DESIGN
+
+The website must work across:
+
+- Large desktop monitors.
+- Standard laptops.
+- Tablets.
+- Android smartphones.
+- iPhones.
+
+Desktop:
+- Center the terminal window.
+- Use an appropriately sized maximum width.
+- Maintain comfortable whitespace.
+- Avoid stretching terminal text across the entire screen.
+
+Tablet:
+- Reduce horizontal padding.
+- Keep terminal controls visible.
+- Adapt content widths.
+
+Mobile:
+- Use a full-width terminal layout.
+- Preserve the terminal aesthetic.
+- Ensure readable typography.
+- Use a comfortable touch keyboard input.
+- Display suggested commands as touch-friendly elements.
+- Prevent horizontal overflow.
+- Make project details easy to navigate.
+- Do not require physical keyboard shortcuts.
+
+The mobile experience is equally important.
+
+# 22. ACCESSIBILITY AND USABILITY
+
+Implement:
+- Semantic HTML.
+- Accessible keyboard navigation.
+- Visible focus indicators.
+- Sufficient text contrast.
+- Accessible terminal controls.
+- Screen-reader-friendly labels.
+- Reduced-motion support.
+- Proper input labels.
+- Appropriate external-link behavior.
+
+The terminal should be a usable interface, not an accessibility obstacle.
+
+Provide a conventional accessible navigation alternative when needed.
+
+# 23. SEO AND PROFESSIONAL PRESENTATION
+
+Configure:
+
+Page title:
+Nisat Sama | Java Backend Engineer & Software Developer
+
+Meta description:
+Nisat Sama — Computer Science undergraduate focused on Java backend engineering, Spring Boot, distributed systems, and full-stack software development.
+
+Include:
+- Open Graph metadata.
+- Appropriate page title.
+- Favicon.
+- Semantic page structure.
+- Descriptive project link text.
+- Correct canonical URL where configured.
+
+Do not put personal statistics or competitive programming information into SEO metadata.
+
+Do not expose private information in source code.
+
+# 24. DESIGN QUALITY REQUIREMENTS
+
+The final website must NOT resemble:
+- A generic portfolio template.
+- A resume converted into HTML.
+- A basic terminal component inside a normal landing page.
+- An unstyled command-line application.
+- A hacker-themed animation experiment.
+
+It must resemble a carefully designed product built around an interactive terminal interface.
+
+Pay special attention to:
+- Typography.
+- Spacing.
+- Command output formatting.
+- Consistent alignment.
+- Subtle shadows.
+- Terminal window proportions.
+- Responsive layouts.
+- Section hierarchy.
+- Hover states.
+- Animation timing.
+- Readability.
+
+Use project-specific visual treatments only when they add value.
+
+Do not use random project thumbnails. Prefer clean text-based project panels, architecture diagrams derived from verified implementations, and subtle interface details.
+
+# 25. STRICT CONTENT ACCURACY RULES
+
+These rules are mandatory.
+
+1. Do not invent project functionality.
+2. Inspect repository README files.
+3. Inspect actual source code when necessary.
+4. Verify technology stacks.
+5. Distinguish implemented features from future plans.
+6. Do not invent deployment URLs.
+7. Do not invent performance metrics.
+8. Do not invent user counts.
+9. Do not invent employer responsibilities.
+10. Do not invent certifications.
+11. Do not invent academic achievements.
+12. Do not add projects that cannot be verified.
+13. Do not display competitive programming statistics.
+14. Do not display competitive programming platform links.
+15. Do not include a profile photograph.
+16. Do not create fake testimonials.
+17. Do not create fictional employment history.
+18. Do not use placeholder links that look functional.
+19. Do not expose API secrets.
+20. Do not describe unimplemented functionality as complete.
+
+If repository access fails, use only the project information explicitly supplied here. Do not guess.
+
+# 26. FINAL IMPLEMENTATION CHECKLIST
+
+Before considering the portfolio complete, verify all of the following.
+
+## Visual
+- [ ] macOS Terminal-inspired design.
+- [ ] Consistent dark color palette.
+- [ ] Correct terminal typography.
+- [ ] Professional appearance.
+- [ ] No profile photo.
+- [ ] No unnecessary illustrations.
+- [ ] No excessive neon effects.
+
+## Functionality
+- [ ] Terminal commands work.
+- [ ] Command history works.
+- [ ] Arrow-key navigation works.
+- [ ] Tab completion works.
+- [ ] Invalid commands are handled.
+- [ ] Clear command works.
+- [ ] Project commands work.
+- [ ] External links work.
+- [ ] Suggested commands work.
+- [ ] Terminal scrolling works.
+
+## Content
+- [ ] Correct personal information.
+- [ ] Correct education details.
+- [ ] Correct internship information.
+- [ ] Five selected primary projects.
+- [ ] Optional projects only after verification.
+- [ ] Open-source contribution included.
+- [ ] Achievements included.
+- [ ] Certifications included.
+- [ ] Contact details correct.
+- [ ] No competitive programming statistics.
+- [ ] No LeetCode/GFG/HackerRank profile links.
+
+## Engineering
+- [ ] Clean component structure.
+- [ ] Reusable command registry.
+- [ ] Type-safe data models.
+- [ ] Responsive layout.
+- [ ] No broken links.
+- [ ] No console errors.
+- [ ] No unnecessary dependencies.
+- [ ] No exposed secrets.
+- [ ] SEO metadata configured.
+- [ ] Accessible interactions.
+- [ ] Reduced-motion support.
+
+# 27. HOW TO EXECUTE THIS TASK
+
+Follow this implementation sequence:
+
+**Phase 1 — Repository and content inspection**
+
+Inspect the provided GitHub repositories. Identify the actual project structure, technologies, and implemented functionality.
+
+Do not start inventing project descriptions before inspection.
+
+**Phase 2 — Design system**
+
+Establish:
+- Color tokens.
+- Typography.
+- Terminal window dimensions.
+- Spacing.
+- Responsive breakpoints.
+- Animation behavior.
+
+**Phase 3 — Terminal engine**
+
+Build:
+- Terminal UI.
+- Input handling.
+- Command parser.
+- Command registry.
+- Command history.
+- Autocomplete.
+- Output rendering.
+
+Make sure the terminal is genuinely functional.
+
+**Phase 4 — Portfolio sections**
+
+Implement the profile, skills, projects, experience, education, open-source, achievements, certifications, and contact sections.
+
+**Phase 5 — Interactions and polish**
+
+Add:
+- Initial terminal boot sequence.
+- Progressive reveals.
+- Section transitions.
+- Hover states.
+- Mobile-friendly navigation.
+- Optional Gemini assistant.
+
+**Phase 6 — Testing**
+
+Test all commands, project links, responsive layouts, keyboard navigation, animations, and error states.
+
+Fix issues rather than simply reporting them.
+
+# FINAL CREATIVE INSTRUCTION
+
+I want the website to feel like opening a developer's personal workstation.
+
+The recruiter should feel that they are exploring a developer's engineering environment.
+
+The experience should be distinctive without being distracting.
+
+The terminal should feel authentic, but the information should be exceptionally easy to understand.
+
+Prioritize:
+1. Engineering credibility.
+2. Strong Java backend positioning.
+3. Project quality.
+4. Excellent typography.
+5. Smooth interaction.
+6. Clean code.
+7. Responsive usability.
+
+Do not sacrifice usability for visual effects.
+
+Do not sacrifice technical credibility for animations.
+
+Do not sacrifice content clarity for terminal aesthetics.
+
+**Build the complete working portfolio, not just its first screen.**

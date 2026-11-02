@@ -1,0 +1,6 @@
+{
+  "name": "Nisat Sama Portfolio",
+  "description": "Mac Terminal-inspired interactive engineering portfolio for Nisat Sama, Java Backend Engineer & Full-Stack Developer.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
