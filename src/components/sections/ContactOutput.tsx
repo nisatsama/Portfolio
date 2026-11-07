@@ -28,20 +28,20 @@ export const ContactOutput: React.FC = () => {
           </div>
         </a>
 
-        <a
+        {/* <a
           href={`tel:${profile.contact.phone}`}
           className="p-3.5 rounded-xl bg-[#17191D] border border-[#30343C] hover:border-[#7EE787] transition-colors flex items-center gap-3 group"
         >
           <div className="p-2 rounded-lg bg-[#1E2127] text-[#7EE787] group-hover:scale-105 transition-transform">
             <Phone className="w-4 h-4" />
           </div>
-          {/* <div>
+           <div>
             <div className="text-[11px] text-[#747C87] uppercase">Direct Phone</div>
             <div className="text-xs font-semibold text-[#E6E8EB] group-hover:text-[#7EE787]">
               {profile.contact.formattedPhone}
             </div>
-          </div> */}
-        </a>
+          </div> 
+        </a> */}
 
         <a
           href={profile.contact.linkedin}
@@ -83,17 +83,17 @@ export const ContactOutput: React.FC = () => {
           <MapPin className="w-3.5 h-3.5 text-[#E5C07B]" />
           <span>Location: {profile.location}</span>
         </span>
-        <span className="flex items-center gap-1.5">
+        {/* <span className="flex items-center gap-1.5">
           <Globe className="w-3.5 h-3.5 text-[#7AA2F7]" />
-          <a
+          /* <a
             href={profile.contact.domain}
             target="_blank"
             rel="noopener noreferrer"
             className="hover:underline text-[#E6E8EB]"
           >
             {profile.contact.domain}
-          </a>
-        </span>
+          </a> */}
+        </span> */}
       </div>
     </div>
   );
