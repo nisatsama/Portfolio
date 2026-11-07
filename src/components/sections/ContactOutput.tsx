@@ -35,12 +35,12 @@ export const ContactOutput: React.FC = () => {
           <div className="p-2 rounded-lg bg-[#1E2127] text-[#7EE787] group-hover:scale-105 transition-transform">
             <Phone className="w-4 h-4" />
           </div>
-          <div>
+          {/* <div>
             <div className="text-[11px] text-[#747C87] uppercase">Direct Phone</div>
             <div className="text-xs font-semibold text-[#E6E8EB] group-hover:text-[#7EE787]">
               {profile.contact.formattedPhone}
             </div>
-          </div>
+          </div> */}
         </a>
 
         <a
