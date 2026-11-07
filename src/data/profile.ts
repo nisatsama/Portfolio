@@ -43,10 +43,10 @@ export const profile: ProfileData = {
   contact: {
     email: "nisatsama7547@gmail.com",
     phone: "+917439730487",
-    formattedPhone: "+91 7439730487",
+    //formattedPhone: "+91 7439730487",
     linkedin: "https://www.linkedin.com/in/nisat-sama/",
     github: "https://github.com/nisatsama",
-    domain: "https://nisatsama.dev",
+    //domain: "https://nisatsama.dev",
   },
   specializations: [
     "Java Backend Architecture",
