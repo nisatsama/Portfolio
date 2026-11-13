@@ -47,49 +47,6 @@ export function App() {
           <TerminalWindow ref={terminalRef} />
         </section>
 
-        {/* Architecture & Engineering Focus KPI Strip */}
-        <section className="w-full max-w-5xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 font-mono text-xs mb-4">
-          <div className="p-3.5 rounded-xl bg-[#17191D]/80 border border-[#30343C] hover:border-[#7EE787]/50 transition-colors">
-            <div className="flex items-center gap-2 text-[#7EE787] font-semibold mb-1">
-              <Cpu className="w-4 h-4" />
-              <span>Backend Core</span>
-            </div>
-            <div className="text-[#A0A7B2] text-[11px] leading-relaxed">
-              Java 21, Spring Boot, Spring Security, REST APIs & Asynchronous Workflows
-            </div>
-          </div>
-
-          <div className="p-3.5 rounded-xl bg-[#17191D]/80 border border-[#30343C] hover:border-[#7AA2F7]/50 transition-colors">
-            <div className="flex items-center gap-2 text-[#7AA2F7] font-semibold mb-1">
-              <Network className="w-4 h-4" />
-              <span>Event Streaming</span>
-            </div>
-            <div className="text-[#A0A7B2] text-[11px] leading-relaxed">
-              Apache Kafka, Transactional Outbox, Concurrent Delivery & Retries
-            </div>
-          </div>
-
-          <div className="p-3.5 rounded-xl bg-[#17191D]/80 border border-[#30343C] hover:border-[#E5C07B]/50 transition-colors">
-            <div className="flex items-center gap-2 text-[#E5C07B] font-semibold mb-1">
-              <Database className="w-4 h-4" />
-              <span>Data Consistency</span>
-            </div>
-            <div className="text-[#A0A7B2] text-[11px] leading-relaxed">
-              PostgreSQL, Redis Cache, Row Locks, Constraints & Idempotency
-            </div>
-          </div>
-
-          <div className="p-3.5 rounded-xl bg-[#17191D]/80 border border-[#30343C] hover:border-[#B4A0F7]/50 transition-colors">
-            <div className="flex items-center gap-2 text-[#B4A0F7] font-semibold mb-1">
-              <ShieldCheck className="w-4 h-4" />
-              <span>Academic Honors</span>
-            </div>
-            <div className="text-[#A0A7B2] text-[11px] leading-relaxed">
-              Adamas University CSE · CGPA 8.77 · Class XII 95.75% · Chemistry 100/100
-            </div>
-          </div>
-        </section>
-
         {/* Minimal Terminal Footer */}
         <TerminalFooter />
       </main>
